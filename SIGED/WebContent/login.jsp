@@ -1,5 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1" --%>
+<%--     pageEncoding="ISO-8859-1"%> --%>
+     <%@ page language="java" contentType="text/html; charset=UTF-8" 
+    pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,10 +10,10 @@
 <title>SIGED</title>
 </head>
 <body>
-	SISTEMA DE GESTÃO DE DESEMPENHO<br><br>
+	SISTEMA DE GESTÃO DE DESEMPENHO<br><br>
 	<form action="login.jsp" method="post">
 	
-		usu�rio: <br/><input type="text" name="usuario"/><br/>
+		usuário: <br/><input type="text" name="usuario"/><br/>
 		senha:  <br/><input type="text" name="senha"/><br/>
 		<input type="submit" value="Acessar"/>
 	

@@ -7,7 +7,7 @@
 <title>SIGED</title>
 </head>
 <body>
-	SISTEMA DE GESTÃO DE DESEMPENHO mudei é<br><br>
+	SISTEMA DE GESTÃO DE DESEMPENHO<br><br>
 	<form action="login.jsp" method="post">
 	
 		usuário: <br/><input type="text" name="usuario"/><br/>

@@ -8,7 +8,7 @@
 	<%@include file="_cabecalho.jsp"%>
 	
 	<%
-			// Lista de vinhos
+			// Lista de empregados
 				List<Empregado> empregados = EmpregadoManager.consultarTodosEmpregado();
 				
 				if( empregados.isEmpty() ) {
@@ -47,9 +47,10 @@
 	                    <tr class="filters">
 	                        <th width="5%"></th>
 	                        <th width="5%"><input type="text" class="form-control" placeholder="Matricula" disabled></th>
-	                        <th><input type="text" class="form-control" placeholder="Nome" disabled></th>
-	                        <th><input type="text" class="form-control" placeholder="Cargo" disabled></th>
-	                        <th><input type="text" class="form-control" placeholder="Senha" disabled></th>
+	                        <th width="5%" ><input type="text" class="form-control" placeholder="Nome" disabled></th>
+	                        <th width="5%"><input type="text" class="form-control" placeholder="Cargo" disabled></th>
+	                        <th width="5%"><input type="text" class="form-control" placeholder="Departamento" disabled></th>
+	                        <th width="5%"><input type="text" class="form-control" placeholder="Senha" disabled></th>
 	                        
 	                        
 	                    </tr>
@@ -71,6 +72,7 @@
 				      	<td><strong><%=empregado.getMatEmpregado()%></strong></td>
 				      	<td><%=empregado.getNomeEmpregado()%></td>				      	
 				      	<td><%=empregado.getCargoEmpregado()%></td>
+				      	<td><%=empregado.getDepEmpregado()%></td>
 				      	<td><%=empregado.getSenhaEmpregado()%></td>
 				      	
 				      </tr>

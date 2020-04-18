@@ -18,18 +18,18 @@ import utils.Utils;
 public class CadastrarVinhoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String nomeVinho = request.getParameter("nomeVinho").trim(); // campo obrigat髍io		
-		String corVinho = request.getParameter("corVinho").trim(); // campo obrigat髍io		
-		int anoVinho = Integer.parseInt(request.getParameter("anoVinho").trim()); // campo obrigat髍io		
-		double precoVinho = Utils.strMoedaParaDouble(request.getParameter("precoVinho").trim()); // campo obrigat髍io		
-		int qtdEstoque = Integer.parseInt(request.getParameter("qtdEstoque").trim()); // campo obrigat髍io		
+		String nomeVinho = request.getParameter("nomeVinho").trim(); // campo obrigat贸rio		
+		String corVinho = request.getParameter("corVinho").trim(); // campo obrigat贸rio		
+		int anoVinho = Integer.parseInt(request.getParameter("anoVinho").trim()); // campo obrigat贸rio		
+		double precoVinho = Utils.strMoedaParaDouble(request.getParameter("precoVinho").trim()); // campo obrigat贸rio		
+		int qtdEstoque = Integer.parseInt(request.getParameter("qtdEstoque").trim()); // campo obrigat贸rio		
 
 		// Encaminhar para a classe especialista
 		String result = VinhoManager.cadastrarVinho( nomeVinho, anoVinho, corVinho, precoVinho, qtdEstoque );		
 		request.setAttribute("mensagem", result);
 		RequestDispatcher view = request.getRequestDispatcher("gerenciarVinhos.jsp");
 		
-		if( result.contains("N鉶 foi poss韛el cadastrar")) {
+		if( result.contains("N茫o foi poss铆vel cadastrar")) {
 			request.setAttribute("nomeVinho", nomeVinho);	
 			request.setAttribute("anoVinho", anoVinho);	
 			request.setAttribute("corVinho", corVinho);	

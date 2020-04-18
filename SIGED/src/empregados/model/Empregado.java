@@ -26,6 +26,9 @@ public class Empregado {
 	@Column(name = "cargoEmpregado")
 	private String cargoEmpregado;
 
+	@Column(name = "depEmpregado")
+	private String depEmpregado;
+	
 	@Column(name = "senhaEmpregado")
 	private int senhaEmpregado;
 	
@@ -57,10 +60,22 @@ public class Empregado {
 		return senhaEmpregado;
 	}
 
-	public void setSenhaEmpregado(int senhaEmpregado) {
+	public void setSenhaEmpregado(int senhaEmpregado) {;
 		this.senhaEmpregado = senhaEmpregado;
 	}
 
+	public String getDepEmpregado() {
+		return depEmpregado;
+	}
+
+	public void setDepEmpregado(String depEmpregado) {
+		this.depEmpregado = depEmpregado;
+	}
+
+	
+	
+	
+	
 //	public int getIdEmpregado() {
 //		return idEmpregado;
 //	}

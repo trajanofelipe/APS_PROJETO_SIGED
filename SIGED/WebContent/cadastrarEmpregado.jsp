@@ -12,6 +12,7 @@ at<%@include file="_import.jsp"%>
 				Integer matEmpregado = (Integer)request.getAttribute("matEmpregado");
 				String nomeEmpregado = (String)request.getAttribute("nomeEmpregado");	
 				String cargoEmpregado = (String)request.getAttribute("cargoEmpregado");
+				String depEmpregado = (String)request.getAttribute("depEmpregado");
 				Integer senhaEmpregado = (Integer)request.getAttribute("senhaEmpregado");
 				
 	%>
@@ -34,10 +35,11 @@ at<%@include file="_import.jsp"%>
 					<div class="form-group">	
 		        		<label for="nomeEmpregado">Nome</label>					
 						<input type="text" class="form-control" id="nomeEmpregado" name="nomeEmpregado"
-						maxlength="150" required value="<%if(nomeEmpregado!=null){out.println(nomeEmpregado);}%>"/>						
+						maxlength="30" required value="<%if(nomeEmpregado!=null){out.println(nomeEmpregado);}%>"/>						
 					</div>
 
 					<div class="form-group">
+						<label>Cargo</label>
 						<select class="form-control" id="cargoEmpregado" name="cargoEmpregado" required>
 							<option value="Analista do Sistema" <%if( cargoEmpregado != null &&
 							cargoEmpregado.equals("Analista do Sistema")){%>selected="selected"<%}%>>Analista do Sistema</option>
@@ -48,13 +50,26 @@ at<%@include file="_import.jsp"%>
 						</select>
 					</div>	
 					
+						<div class="form-group">
+						<label>Departamento</label>
+						<select class="form-control" id="depEmpregado" name="depEmpregado" required>
+							<option value="DEOPE" <%if( depEmpregado != null &&
+							depEmpregado.equals("DEOPE")){%>selected="selected"<%}%>>DEOPE</option>
+							<option value="DEPRH" <%if( depEmpregado!= null && 
+							depEmpregado.equals("DEPRH")){%>selected="selected"<%}%>>DEPRH</option>
+							<option value="DEPTI" <%if( depEmpregado != null && 
+							depEmpregado.equals("DEPTI")){%>selected="selected"<%}%>>
+							DEPTI</option>
+						</select>
+					</div>
+					
 										
 					
 					<div class="form-group">	 
 		        		<label for="matEmpregado">Matrícula</label>				
 						<input type="number" min="100" max="999" class="form-control" 
 						id="matEmpregado"
-						name="matEmpregado"  length="3"/>
+						name="matEmpregado"  length="15"/>
 					</div>			
 		        		
 				
@@ -63,7 +78,7 @@ at<%@include file="_import.jsp"%>
 						<div class="form-group">	 
 		        		<label for="senhaEmpregado">Senha</label>					 
  						<input type="number" min="1000" max="9999" class="form-control" id="senhaEmpregado"
- 						name="senhaEmpregado" maxlength="4"/>
+ 						name="senhaEmpregado" maxlength="4" length="15"/>
  						
  					</div> 
 				

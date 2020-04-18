@@ -6,19 +6,19 @@ import empregados.dao.EmpregadoDAO;
 
 public class EmpregadoManager {
 
-	public static String cadastrarEmpregado(int matEmpregado, String nomeEmpregado, String cargoEmpregado, int senhaEmpregado) {
+	public static String cadastrarEmpregado(int matEmpregado, String nomeEmpregado, String cargoEmpregado, int senhaEmpregado, String depEmpregado) {
 		EmpregadoDAO dao = new EmpregadoDAO();
 
-		// Verifica se todos os campos est„o preenchidos
-		if( nomeEmpregado == null || matEmpregado == 0|| cargoEmpregado == null || senhaEmpregado == 0) { 
-			String mensagem = "N„o foi possÌvel cadastrar o empregado: Preencha todos os campos obrigatÛrios.";
+		// Verifica se todos os campos est√£o preenchidos
+		if( nomeEmpregado == null || matEmpregado == 0|| cargoEmpregado == null || senhaEmpregado == 0 || depEmpregado == null) { 
+			String mensagem = "N√£o foi poss√≠vel cadastrar o empregado: Preencha todos os campos obrigat√≥rios.";
 			return mensagem;
 		}
 
-		// Verifica se j· existe empregado com este nome
+		// Verifica se J√° existe empregado com este nome
 		Empregado existente = dao.selecionarPorNome(nomeEmpregado);
 		if( existente != null ) {
-			String mensagem = "N„o foi possÌvel cadastrar o empregado: J· existe outro empregado com o mesmo nome.";
+			String mensagem = "N√£o foi poss√≠vel cadastrar o empregado: J√° existe outro empregado com o mesmo nome.";
 			return mensagem;
 		}
 
@@ -27,6 +27,7 @@ public class EmpregadoManager {
 		novo.setNomeEmpregado(nomeEmpregado);
 		novo.setCargoEmpregado(cargoEmpregado);
 		novo.setSenhaEmpregado(senhaEmpregado);
+		novo.setDepEmpregado(depEmpregado);
 		
 		try {
 			dao.inserir(novo);
@@ -34,29 +35,29 @@ public class EmpregadoManager {
 			return mensagem;
 		} catch( Exception e ) {
 			e.printStackTrace();
-			String mensagem = "N„o foi possÌvel cadastrar o empregado";
+			String mensagem = "N√£o foi poss√≠vel cadastrar o empregado";
 			
 			return mensagem;
 		}
 	}
 	
-//	public EmpregadoManager() {
-//		super();
-//		// TODO Auto-generated constructor stub
-//	}
-	public static String editarEmpregado(int matEmpregado, String nomeEmpregado, String cargoEmpregado, int senhaEmpregado) {
+	public EmpregadoManager() {
+	super();
+	// TODO Auto-generated constructor stub
+	}
+	public static String editarEmpregado(int matEmpregado, String nomeEmpregado, String cargoEmpregado, int senhaEmpregado, String depEmpregado) {
 		EmpregadoDAO dao = new EmpregadoDAO();
 
-		// Verifica se todos os campos est„o preenchidos
-		if( nomeEmpregado == null || matEmpregado == 0 || cargoEmpregado== null || senhaEmpregado == 0 ) { 
-			String mensagem = "N„o foi possÌvel editar o empregado: Preencha todos os campos obrigatÛrios.";
+		// Verifica se todos os campos est√£o preenchidos
+		if( nomeEmpregado == null || matEmpregado == 0 || cargoEmpregado== null || senhaEmpregado == 0 || depEmpregado == null) { 
+			String mensagem = "N√£o foi poss√≠vel editar o empregado: Preencha todos os campos obrigat√≥rios.";
 			return mensagem;
 		}
 
-		// Verifica se j· existe empregado com este nome
+		// Verifica se J√° existe empregado com este nome
 		Empregado existente = dao.selecionarPorNome(nomeEmpregado);
 		if( existente != null && existente.getMatEmpregado() != matEmpregado) {
-			String mensagem = "N„o foi possÌvel editar o empregado: J· existe outro Empregado com este nome.";
+			String mensagem = "N√£o foi poss√≠vel editar o empregado: J√° existe outro Empregado com este nome.";
 			return mensagem;
 		}
 
@@ -66,6 +67,7 @@ public class EmpregadoManager {
 		existente.setMatEmpregado(matEmpregado);
 		existente.setCargoEmpregado(cargoEmpregado);
 		existente.setSenhaEmpregado(senhaEmpregado);
+		existente.setDepEmpregado(depEmpregado);
 		
 		
 		try {
@@ -74,7 +76,8 @@ public class EmpregadoManager {
 			return mensagem;
 		} catch( Exception e ) {
 			e.printStackTrace();
-			String mensagem = "N„o foi possÌvel editar o Empregado";
+			String mensagem = "N√£o foi poss√≠vel editar o Empregado";
+			System.out.println(existente.getNomeEmpregado());
 			return mensagem;
 		}
 	}
@@ -89,7 +92,7 @@ public class EmpregadoManager {
 			return mensagem;
 		} catch( Exception e ) {
 			e.printStackTrace();
-			String mensagem = "N„o foi possÌvel apagar o empregado: ";
+			String mensagem = "N√£o foi poss√≠vel apagar o empregado: ";
 			return mensagem;
 		}
 	}
@@ -129,25 +132,28 @@ public class EmpregadoManager {
 		novo.setNomeEmpregado("brunoleite");
 		novo.setCargoEmpregado("Analista de Desenvolvimento");
 		novo.setSenhaEmpregado(1111);
+		novo.setDepEmpregado("DEOPE");
 		empregadoDao.inserir(novo);
 		
 		novo.setMatEmpregado(222);
 		novo.setNomeEmpregado("andresilva");
 		novo.setCargoEmpregado("Gestor");
 		novo.setSenhaEmpregado(2222);
+		novo.setDepEmpregado("DEPRH");
 		empregadoDao.inserir(novo);
-		
-		
+			
 		novo.setMatEmpregado(333);
 		novo.setNomeEmpregado("rafaelsantos");
 		novo.setCargoEmpregado("Analista de Desenvolvimento");
 		novo.setSenhaEmpregado(3333);
+		novo.setDepEmpregado("DEPRH");
 		empregadoDao.inserir(novo);
 		
 		novo.setMatEmpregado(444);
 		novo.setNomeEmpregado("hicarosouza");
 		novo.setCargoEmpregado("Analista do Sistema");
 		novo.setSenhaEmpregado(4444);
+		novo.setDepEmpregado("DEPTI");
 		empregadoDao.inserir(novo);
 		
 	}

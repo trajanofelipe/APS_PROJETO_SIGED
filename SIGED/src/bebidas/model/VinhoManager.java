@@ -8,16 +8,16 @@ public class VinhoManager {
 	public static String cadastrarVinho( String nomeVinho, int anoVinho, String corVinho, double precoVinho, int qtdEstoque ) {
 		VinhoDAO dao = new VinhoDAO();
 
-		// Verifica se todos os campos estão preenchidos
+		// Verifica se todos os campos estï¿½o preenchidos
 		if( nomeVinho == null || anoVinho <= 0 || corVinho == null || precoVinho < 0 || qtdEstoque < 0 ) { 
-			String mensagem = "Não foi possível cadastrar o vinho: Preencha todos os campos obrigatórios.";
+			String mensagem = "NÃ£o foi possÃ­vel cadastrar o vinho: Preencha todos os campos obrigatÃ³rios.";
 			return mensagem;
 		}
 
-		// Verifica se já existe vinho com este nome
+		// Verifica se JÃ¡ existe vinho com este nome
 		Vinho existente = dao.selecionarPorNome(nomeVinho);
 		if( existente != null ) {
-			String mensagem = "Não foi possível cadastrar o vinho: Já existe outro vinho com este nome.";
+			String mensagem = "NÃ£o foi possÃ­vel cadastrar o vinho: JÃ¡ existe outro vinho com este nome.";
 			return mensagem;
 		}
 
@@ -34,7 +34,7 @@ public class VinhoManager {
 			return mensagem;
 		} catch( Exception e ) {
 			e.printStackTrace();
-			String mensagem = "Não foi possível cadastrar o vinho";
+			String mensagem = "NÃ£o foi possÃ­vel cadastrar o vinho";
 			return mensagem;
 		}
 	}
@@ -42,16 +42,16 @@ public class VinhoManager {
 	public static String editarVinho( int idVinho, String nomeVinho, int anoVinho, String corVinho, double precoVinho, int qtdEstoque ) {
 		VinhoDAO dao = new VinhoDAO();
 
-		// Verifica se todos os campos estão preenchidos
+		// Verifica se todos os campos estï¿½o preenchidos
 		if( nomeVinho == null || anoVinho <= 0 || corVinho == null || precoVinho < 0 || qtdEstoque < 0 ) { 
-			String mensagem = "Não foi possível editar o vinho: Preencha todos os campos obrigatórios.";
+			String mensagem = "NÃ£o foi possÃ­vel editar o vinho: Preencha todos os campos obrigatÃ³rios.";
 			return mensagem;
 		}
 
-		// Verifica se já existe vinho com este nome
+		// Verifica se JÃ¡ existe vinho com este nome
 		Vinho existente = dao.selecionarPorNome(nomeVinho);
 		if( existente != null && existente.getIdVinho() != idVinho ) {
-			String mensagem = "Não foi possível editar o vinho: Já existe outro vinho com este nome.";
+			String mensagem = "NÃ£o foi possÃ­vel editar o vinho: JÃ¡ existe outro vinho com este nome.";
 			return mensagem;
 		}
 
@@ -69,7 +69,7 @@ public class VinhoManager {
 			return mensagem;
 		} catch( Exception e ) {
 			e.printStackTrace();
-			String mensagem = "Não foi possível editar o vinho";
+			String mensagem = "NÃ£o foi possÃ­vel editar o vinho";
 			return mensagem;
 		}
 	}
@@ -83,7 +83,7 @@ public class VinhoManager {
 			return mensagem;
 		} catch( Exception e ) {
 			e.printStackTrace();
-			String mensagem = "Não foi possível apagar o vinho: ";
+			String mensagem = "NÃ£o foi possÃ­vel apagar o vinho: ";
 			return mensagem;
 		}
 	}

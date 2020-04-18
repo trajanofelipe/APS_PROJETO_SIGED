@@ -1,7 +1,11 @@
+
+
 <%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1" --%>
 <%--     pageEncoding="ISO-8859-1"%> --%>
      <%@ page language="java" contentType="text/html; charset=UTF-8" 
     pageEncoding="UTF-8"%>
+    
+    
     
 <!DOCTYPE html>
 <html>
@@ -10,7 +14,7 @@
 <title>SIGED</title>
 </head>
 <body>
-	SISTEMA DE GESTÃO DE DESEMPENHO ÉÉÉ ÇÇÇ<br><br>
+	SISTEMA DE GESTÃO DE DESEMPENHO<br><br>
 	<form action="login.jsp" method="post">
 	
 		usuário: <br/><input type="text" name="usuario"/><br/>
@@ -19,6 +23,9 @@
 	
 	</form>
 	<%
+	
+	
+	
 		String usuario = request.getParameter("usuario"); 
 		
 		String senha = request.getParameter("senha");
@@ -27,10 +34,16 @@
 				
 				&&	senha!=null && !senha.isEmpty() 
 			)
+			
+			
+				
+			
+	
 		{
 		session.setAttribute("usuario", usuario);
-		response.sendRedirect("index.jsp");
-			
+		session.setAttribute("senha", senha);
+ 		response.sendRedirect("index.jsp");
+// 		response.sendRedirect("loginDAO.java");
 		}
 			
 			

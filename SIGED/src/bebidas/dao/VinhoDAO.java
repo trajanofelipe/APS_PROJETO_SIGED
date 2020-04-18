@@ -16,15 +16,15 @@ public class VinhoDAO extends CommonsDAO {
 		EntityManagerFactory factory = HibernateUtil.getEntityManagerFactory();
 		EntityManager manager = factory.createEntityManager();
 		Vinho resultado = manager.find(Vinho.class, identificador);
-		System.out.println(resultado);
-//		try {
-//			manager.getTransaction().begin();
-//			manager.remove( resultado );
-//			manager.getTransaction().commit();
-//		} catch( Exception e ){
-//			e.printStackTrace();
-//			return false;
-//		}
+		//System.out.println(resultado);
+		try {
+			manager.getTransaction().begin();
+			manager.remove( resultado );
+			manager.getTransaction().commit();
+		} catch( Exception e ){
+			e.printStackTrace();
+			return false;
+		}
 		manager.close();	
 		return true;
 	}

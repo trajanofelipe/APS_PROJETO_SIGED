@@ -1,6 +1,4 @@
 
-
-
 package empregados.servlets;
 
 import java.io.IOException;
@@ -19,21 +17,23 @@ import empregados.model.EmpregadoManager;
 public class CadastrarEmpregadoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		int matEmpregado = Integer.parseInt(request.getParameter("matEmpregado").trim()); // campo obrigat髍io
-		String nomeEmpregado = request.getParameter("nomeEmpregado").trim(); // campo obrigat髍io		
-		String cargoEmpregado = request.getParameter("cargoEmpregado").trim(); // campo obrigat髍io
-		int senhaEmpregado = Integer.parseInt(request.getParameter("senhaEmpregado").trim()); // campo obrigat髍io		
+		int matEmpregado = Integer.parseInt(request.getParameter("matEmpregado").trim()); // campo obrigat贸rio
+		String nomeEmpregado = request.getParameter("nomeEmpregado").trim(); // campo obrigat贸rio		
+		String cargoEmpregado = request.getParameter("cargoEmpregado").trim(); // campo obrigat贸rio
+		String depEmpregado = request.getParameter("depEmpregado").trim(); // campo obrigat贸rio
+		int senhaEmpregado = Integer.parseInt(request.getParameter("senhaEmpregado").trim()); // campo obrigat贸rio		
 		
 		
 		// Encaminhar para a classe especialista
-		String result = EmpregadoManager.cadastrarEmpregado( matEmpregado, nomeEmpregado, cargoEmpregado, senhaEmpregado);		
+		String result = EmpregadoManager.cadastrarEmpregado( matEmpregado, nomeEmpregado, cargoEmpregado, senhaEmpregado, depEmpregado);		
 		request.setAttribute("mensagem", result);
 		RequestDispatcher view = request.getRequestDispatcher("gerenciarEmpregados.jsp");
 		
-		if( result.contains("N鉶 foi poss韛el cadastrar")) {
+		if( result.contains("N茫o foi poss铆vel cadastrar")) {
 			request.setAttribute("nomeEmpregado", nomeEmpregado);	
 			request.setAttribute("matEmpregado", matEmpregado);	
 			request.setAttribute("cargoEmpregado", cargoEmpregado);	
+			request.setAttribute("depEmpregado", depEmpregado);
 			request.setAttribute("senhaEmpregado", senhaEmpregado);	
 			view = request.getRequestDispatcher("cadastrarEmpregado.jsp");
 		}		

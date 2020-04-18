@@ -1,5 +1,5 @@
 
-package empregados.dao;
+package indicadores.dao;
 
 import java.util.List;
 
@@ -13,7 +13,8 @@ public interface GenericDAO {
 	
 	public List<?> selecionarTodos();
 	
-	public Object selecionarPorMat( int identificador );
+	public Object selecionarPorId(int identificador );
 	
 
+	
 }

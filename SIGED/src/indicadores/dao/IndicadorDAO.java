@@ -1,5 +1,5 @@
 
-package empregados.dao;
+package indicadores.dao;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,15 +7,17 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 
-import empregados.model.Empregado;
+import indicadores.dao.HibernateUtil;
 
-public class EmpregadoDAO extends CommonsDAO {
+import indicadores.model.Indicador;
+
+public class IndicadorDAO extends CommonsDAO {
 
 	@Override
 	public boolean apagar(int identificador) {
 		EntityManagerFactory factory = HibernateUtil.getEntityManagerFactory();
 		EntityManager manager = factory.createEntityManager();
-		Empregado resultado = manager.find(Empregado.class, identificador);
+		Indicador resultado = manager.find(Indicador.class, identificador);
 //		System.out.println(resultado);
 		try {
 			manager.getTransaction().begin();
@@ -30,24 +32,24 @@ public class EmpregadoDAO extends CommonsDAO {
 	}
 
 	@Override
-	public List<Empregado> selecionarTodos() {
-		List<Empregado> resultado = new ArrayList<Empregado>();
+	public List<Indicador> selecionarTodos() {
+		List<Indicador> resultado = new ArrayList<Indicador>();
 		EntityManagerFactory factory = HibernateUtil.getEntityManagerFactory();
 		EntityManager manager = factory.createEntityManager();		
-	    Query query = manager.createQuery("from Empregado e order by matEmpregado");
+	    Query query = manager.createQuery("from Indicador i order by idIndicador");
 	    resultado = query.getResultList();
 	    manager.close();
 		return resultado;
 	}
 
 	@Override
-	public Empregado selecionarPorMat(int matEmpregado) {
+	public Indicador selecionarPorId(int idIndicador) {
 		EntityManagerFactory factory = HibernateUtil.getEntityManagerFactory();
 		EntityManager manager = factory.createEntityManager();
-		Query query = manager.createQuery("select e from Empregado e where e.matEmpregado = :matEmpregado");
-		query.setParameter("matEmpregado", matEmpregado);
+		Query query = manager.createQuery("select i from Indicador i where i.idIndicador = :idIndicador");
+		query.setParameter("idIndicador", idIndicador);
 		if( query.getResultList() != null && !query.getResultList().isEmpty()  ) {
-			Empregado resultado = (Empregado)query.getResultList().get(0);
+			Indicador resultado = (Indicador)query.getResultList().get(0);
 			manager.close();
 			return resultado;
 		} 
@@ -55,13 +57,13 @@ public class EmpregadoDAO extends CommonsDAO {
 		return null;
 	}
 	
-	public Empregado selecionarPorNome( String nomeEmpregado ) {
+	public Indicador selecionarPorNome( String nomeIndicador) {
 		EntityManagerFactory factory = HibernateUtil.getEntityManagerFactory();
 		EntityManager manager = factory.createEntityManager();
-		Query query = manager.createQuery("select e from Empregado e where e.nomeEmpregado = :nomeEmpregado order by matEmpregado");
-		query.setParameter("nomeEmpregado", nomeEmpregado);
+		Query query = manager.createQuery("select i from Indicador i where i.depIndicador = :depIndicador order by idIndicador");
+		query.setParameter("depIndicador", nomeIndicador);
 		if( query.getResultList() != null && !query.getResultList().isEmpty()  ) {
-			Empregado resultado = (Empregado)query.getResultList().get(0);
+			Indicador resultado = (Indicador)query.getResultList().get(0);
 			manager.close();
 			return resultado;
 		} 

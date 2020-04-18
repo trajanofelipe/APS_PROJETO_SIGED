@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" 
-xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <display-name>SIGED</display-name>
   <distributable/>
-<!--   <error-page> -->
-<!--     <exception-type>java.lang.Throwable</exception-type> -->
-<!--     <location>/erro.jsp</location> -->
-<!--   </error-page> -->
-<!--   <error-page> -->
-<!--     <error-code>404</error-code> -->
-<!--     <location>/erro.jsp</location> -->
-<!--   </error-page> -->
-<!--   <error-page> -->
-<!--     <error-code>500</error-code> -->
-<!--     <location>/erro.jsp</location> -->
-<!--   </error-page> -->
   <servlet>
     <description></description>
     <display-name>CadastrarVinhoServlet</display-name>
@@ -65,7 +52,115 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
     <servlet-name>PopularBdServlet</servlet-name>
     <url-pattern>/PopularBdServlet</url-pattern>
   </servlet-mapping>
+<!--  indicador -->
   <servlet>
+    <description></description>
+    <display-name>CadastrarIndicadorServlet</display-name>
+    <servlet-name>CadastrarIndicadorServlet</servlet-name>
+    <servlet-class>indicadores.servlets.CadastrarIndicadorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CadastrarIndicadorServlet</servlet-name>
+    <url-pattern>/CadastrarIndicadorServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditarIndicadorServlet</display-name>
+    <servlet-name>EditarIndicadorServlet</servlet-name>
+    <servlet-class>indicadores.servlets.EditarIndicadorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditarIndicadorServlet</servlet-name>
+    <url-pattern>/EditarIndicadorServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ExcluirIndicadorServlet</display-name>
+    <servlet-name>ExcluirIndicadorServlet</servlet-name>
+    <servlet-class>indicadores.servlets.ExcluirIndicadorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExcluirIndicadorServlet</servlet-name>
+    <url-pattern>/ExcluirIndicadorServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LimparBdIndicadorServlet</display-name>
+    <servlet-name>LimparBdIndicadorServlet</servlet-name>
+    <servlet-class>indicadores.servlets.LimparBdIndicadorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LimparBdIndicadorServlet</servlet-name>
+    <url-pattern>/LimparBdIndicadorServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PopularBdIndicadorServlet</display-name>
+    <servlet-name>PopularBdIndicadorServlet</servlet-name>
+    <servlet-class>indicadores.servlets.PopularBdIndicadorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PopularBdIndicadorServlet</servlet-name>
+    <url-pattern>/PopularBdIndicadorServlet</url-pattern>
+  </servlet-mapping>
+
+<!--  FIM DO INDICADOR  -->
+<!--   INICIO DO EMPREGADO -->
+
+<servlet>
+    <description></description>
+    <display-name>CadastrarEmpregadoServlet</display-name>
+    <servlet-name>CadastrarEmpregadoServlet</servlet-name>
+    <servlet-class>empregados.servlets.CadastrarEmpregadoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CadastrarEmpregadoServlet</servlet-name>
+    <url-pattern>/CadastrarEmpregadoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditarEmpregadoServlet</display-name>
+    <servlet-name>EditarEmpregadoServlet</servlet-name>
+    <servlet-class>empregados.servlets.EditarEmpregadoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditarEmpregadoServlet</servlet-name>
+    <url-pattern>/EditarEmpregadoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ExcluirEmpregadoServlet</display-name>
+    <servlet-name>ExcluirEmpregadoServlet</servlet-name>
+    <servlet-class>empregados.servlets.ExcluirEmpregadoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExcluirEmpregadoServlet</servlet-name>
+    <url-pattern>/ExcluirEmpregadoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LimparBdEmpregadoServlet</display-name>
+    <servlet-name>LimparBdEmpregadoServlet</servlet-name>
+    <servlet-class>empregados.servlets.LimparBdEmpregadoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LimparBdEmpregadoServlet</servlet-name>
+    <url-pattern>/LimparBdEmpregadoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PopularBdEmpregadoServlet</display-name>
+    <servlet-name>PopularBdEmpregadoServlet</servlet-name>
+    <servlet-class>empregados.servlets.PopularBdEmpregadoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PopularBdEmpregadoServlet</servlet-name>
+    <url-pattern>/PopularBdEmpregadoServlet</url-pattern>
+  </servlet-mapping>
+
+
+<!-- FIM DO EMPREGADO -->
+    <servlet>
     <description></description>
     <display-name>ClienteCadas</display-name>
     <servlet-name>ClienteCadas</servlet-name>
@@ -125,16 +220,16 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
     <servlet-name>CadastrarClienteServlet</servlet-name>
     <url-pattern>/CadastrarClienteServlet</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ExcluirEmpregadoServlet</display-name>
-    <servlet-name>ExcluirEmpregadoServlet</servlet-name>
-    <servlet-class>empregados.servlets.ExcluirEmpregadoServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ExcluirEmpregadoServlet</servlet-name>
-    <url-pattern>/ExcluirEmpregadoServlet</url-pattern>
-  </servlet-mapping>
+<!--   <servlet> -->
+<!--     <description></description> -->
+<!--     <display-name>ExcluirEmpregadoServlet</display-name> -->
+<!--     <servlet-name>ExcluirEmpregadoServlet</servlet-name> -->
+<!--     <servlet-class>empregados.servlets.ExcluirEmpregadoServlet</servlet-class> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!--     <servlet-name>ExcluirEmpregadoServlet</servlet-name> -->
+<!--     <url-pattern>/ExcluirEmpregadoServlet</url-pattern> -->
+<!--   </servlet-mapping> -->
   <servlet>
     <description></description>
     <display-name>EditarClienteServlet</display-name>
@@ -204,5 +299,15 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
   <servlet-mapping>
     <servlet-name>ConsultarPedidoPorStatusServlet</servlet-name>
     <url-pattern>/ConsultarPedidoPorStatusServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>indicadores</display-name>
+    <servlet-name>indicadores</servlet-name>
+    <servlet-class>indicadores.model.indicadores</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>indicadores</servlet-name>
+    <url-pattern>/indicadores</url-pattern>
   </servlet-mapping>
 </web-app>

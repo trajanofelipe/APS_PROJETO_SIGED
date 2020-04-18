@@ -1,5 +1,4 @@
-
-package empregados.dao;
+package indicadores.dao;
 
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -26,7 +25,7 @@ public abstract class CommonsDAO implements GenericDAO{
 		EntityManagerFactory factory = HibernateUtil.getEntityManagerFactory();
 		EntityManager manager = factory.createEntityManager();
 		manager.getTransaction().begin();
-		/*manager.merge(objeto);*/
+//		manager.merge(objeto);
 		manager.persist(objeto);
 		manager.getTransaction().commit();
 		manager.close();
@@ -37,8 +36,7 @@ public abstract class CommonsDAO implements GenericDAO{
 	
 
 
-	
 	//@Override
-	public abstract Object selecionarPorMat(int identificador);
+	public abstract Object selecionarPorId(int identificador);
 
 }

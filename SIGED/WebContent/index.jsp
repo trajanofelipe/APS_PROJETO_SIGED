@@ -36,18 +36,23 @@ if(usuario == null || senha == null){
 		     		       	
 	    	<div class="panel-body">
 	    		<a href="gerenciarEmpregados.jsp" data-toggle="popover" data-trigger="hover"
-	    		data-content="Permite o cadastro, consulta, edição e remoção de empregadps.">Gerenciar Empregados</a>
+	    		data-content="Permite o cadastro, consulta, edição e remoção de empregados.">Gerenciar Usuários</a>
 	    	</div>
 	    	
 	    	<div class="panel-body">
-	    		<a href="lancarIndicador.jsp" data-toggle="popover" data-trigger="hover"
-	    		data-content="Permite o cadastro, consulta, edição e remoção de empregadps.">Lançar Indicador</a>
+	    		<a href="gerenciarIndicadores.jsp" data-toggle="popover" data-trigger="hover"
+	    		data-content="Permite o cadastro, consulta, edição e remoção de Indicadores de Desempenho.">Gerenciar Indicadores</a>
 	    	</div>
 	    		
 	    		
+	    			<div class="panel-body">
+	    		<a href="lancarIndicador.jsp" data-toggle="popover" data-trigger="hover"
+	    		data-content="Permite o lançamento de indicadores de Desempenho.">Lançar Indicador</a>
+	    	</div>
+	    		
 	    	<div class="panel-body">
 	    		<a href="verPainel.jsp" data-toggle="popover" data-trigger="hover"
-	    		data-content="Permite o cadastro, consulta, edição e remoção de empregadps.">Painel</a>
+	    		data-content="Permite visualizar os resultados alcançados.">Painel</a>
 	    	</div>
 	    	
 	    	

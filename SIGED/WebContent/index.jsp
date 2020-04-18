@@ -1,4 +1,4 @@
- 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -30,7 +30,7 @@ if(usuario == null || senha == null){
 	<div class="container">
 
 		<div class="panel panel-success">
-		    <div class="panel-heading"><strong>Analista do Sistema</strong></div>
+		    <div class="panel-heading"><strong>GERENCIADOR DE TAREFAS</strong></div>
 <!-- 		    AQUI, DEVE-SE AJUSTAR PARA QUE O NOME ACIMA SEJA DO CARGO DE QUEM FAZ O LOGIN -->
 		    
 		     		       	
@@ -55,17 +55,17 @@ if(usuario == null || senha == null){
 	    </div>
 	    
 	    <div class="panel panel-info">
-		    <div class="panel-heading"><strong>Pedidos</strong></div>
-	    	<div class="panel-body">
-	    		<a href="#" data-toggle="popover" data-trigger="hover"
-	    		data-content="Permite o cadastro de novo pedido, consulta, edição e remoção de pedidos.">Gerenciar Pedidos</a>
-	    	</div>
-	    	<div class="panel-body">
-	    		<a href="#" data-toggle="popover" data-trigger="hover" data-content="Exibe relatórios das vendas.">Relatórios</a>
+		    <div class="panel-heading"><strong>ANTERIOR PRECISA TIRAR</strong></div>
+<!-- 	    	<div class="panel-body"> -->
+<!-- 	    		<a href="#" data-toggle="popover" data-trigger="hover" -->
+<!-- 	    		data-content="Permite o cadastro de novo pedido, consulta, edição e remoção de pedidos.">Gerenciar Pedidos</a> -->
+<!-- 	    	</div> -->
+<!-- 	    	<div class="panel-body"> -->
+<!-- 	    		<a href="#" data-toggle="popover" data-trigger="hover" data-content="Exibe relatórios das vendas.">Relatórios</a> -->
 	    		
 	    		 <div class="panel-body"> 
 	    		<a href="gerenciarVinhos.jsp" data-toggle="popover" data-trigger="hover" data-content=
-"Permite o cadastro de novo vinho, consulta, edição e remoção de vinhos.">Gerenciar Vinhos</a> 
+				"Permite o cadastro de novo vinho, consulta, edição e remoção de vinhos.">Gerenciar Vinhos</a> 
  	    	</div> 
 	    	</div>
 	    </div>

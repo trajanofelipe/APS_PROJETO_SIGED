@@ -156,4 +156,44 @@ public class IndicadorManager {
 		
 	}
 
+	
+	public static String lancarIndicador(int idIndicador, String dataIndicador, String nomeIndicador, String depIndicador, int metaIndicador, int valorIndicador) {
+		
+		IndicadorDAO dao = new IndicadorDAO();
+
+				// Verifica se todos os campos estão preenchidos
+//				if( nomeIndicador == null || depIndicador == null || metaIndicador ==0 || dataIndicador == null) { 
+//					String mensagem = "Não foi possível editar o indicador: Preencha todos os campos obrigatórios.";
+//					return mensagem;
+//				}
+
+				// Verifica se Já existe indicador com este nome
+				Indicador existente = dao.selecionarPorNome(nomeIndicador);
+//				if( existente != null && existente.getIdIndicador() != idIndicador ) {
+//					Str3ing mensagem = "Não foi possível editar o indicaor: Já existe outro indicador com este nome.";
+//					return mensagem;
+//				}
+
+		// Recupera o Indicador a editar
+		existente = (Indicador)dao.selecionarPorId(idIndicador);
+		existente.setDataIndicador(dataIndicador);
+		existente.setNomeIndicador(nomeIndicador);
+		existente.setDepIndicador(depIndicador);
+		existente.setMetaIndicador(metaIndicador);
+		existente.setValorIndicador(valorIndicador);
+		
+				
+		
+		try {
+			dao.atualizar(existente);
+			String mensagem = "Indicador " + existente.getNomeIndicador() + " lançado com sucesso.";
+			return mensagem;
+		} catch( Exception e ) {
+			e.printStackTrace();
+			String mensagem = "Não foi possível lançar o Indicador";
+			System.out.println(existente.getNomeIndicador());
+			return mensagem;
+		}
+	}
+	
 }

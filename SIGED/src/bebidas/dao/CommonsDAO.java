@@ -1,4 +1,3 @@
-
 package bebidas.dao;
 
 import java.util.List;
@@ -34,6 +33,9 @@ public abstract class CommonsDAO implements GenericDAO{
 	//@Override
 	public abstract List<?> selecionarTodos();
 
+	
+	
+	
 	//@Override
 	public abstract Object selecionarPorId(int identificador);
 

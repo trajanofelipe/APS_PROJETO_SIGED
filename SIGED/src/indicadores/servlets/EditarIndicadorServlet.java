@@ -20,24 +20,27 @@ public class EditarIndicadorServlet extends HttpServlet {
 		
 		int idIndicador =  Integer.parseInt(request.getParameter("idIndicador").trim()); // campo obrigatório
 		
+		String dataIndicador = request.getParameter("dataIndicador").trim(); // campo obrigatório
 		String nomeIndicador = request.getParameter("nomeIndicador").trim(); // campo obrigatório		
-		String dataIndicador = request.getParameter("dataIndicador").trim(); // campo obrigatório		
+				
 		String depIndicador = request.getParameter("depIndicador").trim(); // campo obrigatório		
+		int metaIndicador = Integer.parseInt(request.getParameter("metaIndicador").trim()); // campo obrigatório
 		int valorIndicador = Integer.parseInt(request.getParameter("valorIndicador").trim()); // campo obrigatório		
-		int metaIndicador = Integer.parseInt(request.getParameter("metaIndicador").trim()); // campo obrigatório		
+				
 
 		// Encaminhar para a classe especialista
-		String result = IndicadorManager.editarIndicador( idIndicador, dataIndicador, metaIndicador, nomeIndicador, depIndicador, valorIndicador );		
+		String result = IndicadorManager.editarIndicador( idIndicador, dataIndicador,  nomeIndicador, depIndicador, metaIndicador, valorIndicador );		
 		request.setAttribute("mensagem", result);
 		RequestDispatcher view = request.getRequestDispatcher("gerenciarIndicadores.jsp");
 		
 		if( result.contains("Não foi possível cadastrar")) {
 			request.setAttribute("idIndicador", idIndicador);
 			request.setAttribute("dataIndicador", dataIndicador);
+			request.setAttribute("nomeIndicador", nomeIndicador);
 			request.setAttribute("depIndicador", depIndicador);
-			request.setAttribute("nomeIndicador", nomeIndicador);	
+			request.setAttribute("metaIndicador", metaIndicador);	
 			request.setAttribute("valorIndicador", valorIndicador);
-			request.setAttribute("metaIndicador", metaIndicador);
+			
 			view = request.getRequestDispatcher("editarIndicador.jsp");
 		}		
 		

@@ -7,12 +7,12 @@ import indicadores.dao.IndicadorDAO;
 
 public class IndicadorManager {
 
-	public static String cadastrarIndicador(String nomeIndicador, int valorIndicador, String depIndicador, String dataIndicador, int metaIndicador) {
+	public static String cadastrarIndicador(String nomeIndicador, String dataIndicador, String depIndicador,  int metaIndicador, int valorIndicador) {
 		
 		IndicadorDAO dao = new IndicadorDAO();
 
 		// Verifica se todos os campos estão preenchidos
-		if( nomeIndicador == null || valorIndicador == 0|| metaIndicador==0 || depIndicador == null || dataIndicador == null) { 
+		if( nomeIndicador == null || metaIndicador==0 || depIndicador == null || dataIndicador == null) { 
 			String mensagem = "Não foi possível cadastrar o indicador: Preencha todos os campos obrigatórios.";
 			return mensagem;
 		}
@@ -25,15 +25,21 @@ public class IndicadorManager {
 		}
 
 		Indicador novo = new Indicador();
+		novo.setNomeIndicador(nomeIndicador);
 		novo.setDataIndicador(dataIndicador);
 		novo.setDepIndicador(depIndicador);
-		novo.setNomeIndicador(nomeIndicador);
-		novo.setValorIndicador(valorIndicador);
 		novo.setMetaIndicador(metaIndicador);
+		novo.setValorIndicador(valorIndicador);
+	
+		
+		
 		
 		try {
 			dao.inserir(novo);
 			String mensagem = "Indicador " + novo.getNomeIndicador() + " inserido com sucesso.";
+			
+			
+			
 			return mensagem;
 		} catch( Exception e ) {
 			e.printStackTrace();
@@ -48,12 +54,12 @@ public class IndicadorManager {
 	// TODO Auto-generated constructor stub
 	}
 	
-	public static String editarIndicador(int idIndicador, String nomeIndicador, int valorIndicador, String depIndicador, String dataIndicador, int metaIndicador) {
+	public static String editarIndicador(int idIndicador, String dataIndicador, String nomeIndicador, String depIndicador, int metaIndicador, int valorIndicador) {
 		
 		IndicadorDAO dao = new IndicadorDAO();
 
 				// Verifica se todos os campos estão preenchidos
-				if( nomeIndicador == null || valorIndicador == 0|| depIndicador == null || metaIndicador ==0 || dataIndicador == null) { 
+				if( nomeIndicador == null || depIndicador == null || metaIndicador ==0 || dataIndicador == null) { 
 					String mensagem = "Não foi possível editar o indicador: Preencha todos os campos obrigatórios.";
 					return mensagem;
 				}
@@ -68,10 +74,11 @@ public class IndicadorManager {
 		// Recupera o Indicador a editar
 		existente = (Indicador)dao.selecionarPorId(idIndicador);
 		existente.setDataIndicador(dataIndicador);
-		existente.setDepIndicador(depIndicador);
 		existente.setNomeIndicador(nomeIndicador);
-		existente.setValorIndicador(valorIndicador);
+		existente.setDepIndicador(depIndicador);
 		existente.setMetaIndicador(metaIndicador);
+		existente.setValorIndicador(valorIndicador);
+		
 				
 		
 		try {
@@ -134,7 +141,7 @@ public class IndicadorManager {
 		Indicador novo = new Indicador();
 		novo.setDataIndicador("Abril/2020");
 		novo.setDepIndicador("DEOPE");
-		novo.setNomeIndicador("Operações Contratadas no mês");
+		novo.setNomeIndicador("Operações Contratadas");
 		novo.setMetaIndicador(1000);
 		novo.setValorIndicador(0);
 		indicadorDAO.inserir(novo);

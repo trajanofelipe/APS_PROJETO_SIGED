@@ -60,8 +60,8 @@ public class IndicadorDAO extends CommonsDAO {
 	public Indicador selecionarPorNome( String nomeIndicador) {
 		EntityManagerFactory factory = HibernateUtil.getEntityManagerFactory();
 		EntityManager manager = factory.createEntityManager();
-		Query query = manager.createQuery("select i from Indicador i where i.depIndicador = :depIndicador order by idIndicador");
-		query.setParameter("depIndicador", nomeIndicador);
+		Query query = manager.createQuery("select i from Indicador i where i.nomeIndicador = :nomeIndicador order by idIndicador");
+		query.setParameter("nomeIndicador", nomeIndicador);
 		if( query.getResultList() != null && !query.getResultList().isEmpty()  ) {
 			Indicador resultado = (Indicador)query.getResultList().get(0);
 			manager.close();

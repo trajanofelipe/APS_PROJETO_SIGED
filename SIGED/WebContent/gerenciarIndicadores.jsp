@@ -68,20 +68,19 @@
 	                <% for( Indicador indicador : indicadores) { %>
 				      <tr>
 				      	<td>
-				      		<a href="editarIndicador.jsp?idIndicador=<%=indicador.getIdIndicador()%>
-				      		" data-toggle="popover" data-trigger="hover" data-content="Editar">
+				      		<a href="editarIndicador.jsp?idIndicador=<%=indicador.getIdIndicador()%>" data-toggle="popover" data-trigger="hover" data-content="Editar">
 				      		<img src="images/lapis-icon.png" alt="Editar" title="Editar" style="width:16px;height:16px;border:0;"></img></a>
-				      		<a href="confirmacaoIndicador.jsp?idIndicador=<%=indicador.getIdIndicador()%>
-				      		&nomeIndicador=<%=indicador.getNomeIndicador()%>&operacao=excluirIndicador" data-toggle="popover"
+				      		<a href="confirmacaoIndicador.jsp?idIndicador=<%=indicador.getIdIndicador()%>&operacao=excluirIndicador" data-toggle="popover"
 				      		data-trigger="hover" data-content="Excluir"><img src="images/delete-icon.png" alt="Excluir"
 				      		title="Excluir" style="width:16px;height:16px;border:0;"></img></a>
 				      	</td>				      	
 				      	<td><strong><%=indicador.getIdIndicador()%></strong></td>
+				      	<td><%=indicador.getDataIndicador()%></td>
 				      	<td><%=indicador.getNomeIndicador()%></td>				      	
 				      	<td><%=indicador.getDepIndicador()%></td>
-				      	<td><%=indicador.getDataIndicador()%></td>
-				      	<td><%=indicador.getValorIndicador()%></td>
 				      	<td><%=indicador.getMetaIndicador()%></td>
+				      	<td><%=indicador.getValorIndicador()%></td>
+				      	
 				      </tr>
 				    <% } %>
 	            </table>

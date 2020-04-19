@@ -32,12 +32,11 @@ public class Indicador {
 	
 	@Column(name="metaIndicador")
 	private int metaIndicador;
-	
+
 	
 
 	
 	// PENSEI EM CRIAR PESOS MAS DESISTI
-	
 	
 	public int getIdIndicador() {
 		return idIndicador;
@@ -55,22 +54,6 @@ public class Indicador {
 		this.dataIndicador = dataIndicador;
 	}
 
-	public String getNomeIndicador() {
-		return nomeIndicador;
-	}
-
-	public void setNomeIndicador(String nomeIndicador) {
-		this.nomeIndicador = nomeIndicador;
-	}
-
-	public double getValorIndicador() {
-		return valorIndicador;
-	}
-
-	public void setValorIndicador(int valorIndicador) {
-		this.valorIndicador = valorIndicador;
-	}
-
 	public String getDepIndicador() {
 		return depIndicador;
 	}
@@ -79,14 +62,31 @@ public class Indicador {
 		this.depIndicador = depIndicador;
 	}
 
-	public double getMetaIndicador() {
+	public String getNomeIndicador() {
+		return nomeIndicador;
+	}
+
+	public void setNomeIndicador(String nomeIndicador) {
+		this.nomeIndicador = nomeIndicador;
+	}
+
+	public int getValorIndicador() {
+		return valorIndicador;
+	}
+
+	public void setValorIndicador(int valorIndicador) {
+		this.valorIndicador = valorIndicador;
+	}
+
+	public int getMetaIndicador() {
 		return metaIndicador;
 	}
 
 	public void setMetaIndicador(int metaIndicador) {
 		this.metaIndicador = metaIndicador;
 	}
-
+	
+	
 	
 	
 	

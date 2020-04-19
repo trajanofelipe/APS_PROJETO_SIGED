@@ -13,6 +13,7 @@
 		String dataIndicador = (String)request.getAttribute("dataIndicador");
 		String depIndicador = (String)request.getAttribute("depIndicador");
 		Integer metaIndicador = (Integer)request.getAttribute("metaIndicador");
+		Integer valorIndicador = (Integer)request.getAttribute("valorIndicador");
 		
 	%>
 	<!--  CONTAINER DE MENSAGENS -->
@@ -32,9 +33,25 @@
 				
 				
 					<div class="form-group">	
-		        		<label for="nomeVinho">Nome</label>					
-						<input type="text" class="form-control" id="nomeVinho" name="nomeIndicador"
-						maxlength="150" required value="<%if(nomeIndicador!=null){out.println(nomeIndicador);}%>"/>						
+		        		<label for="dataIndicador">Data-Base</label>		
+						<select class="form-control" id="dataIndicador" name="dataIndicador" required>
+							<option value="Abril/2020" <%if( dataIndicador!= null && dataIndicador.equals("Abril/2020"))
+							{%>selected="selected"<%}%>>Abril/2020</option>
+							<option value="Maio/2020" <%if( dataIndicador!= null && dataIndicador.equals("Maio/2020"))
+							{%>selected="selected"<%}%>>Maio/2020</option>
+							<option value="Junho/2020" <%if( dataIndicador!= null && dataIndicador.equals("Junho/2020"))
+							{%>selected="selected"<%}%>>Junho/2020</option>
+							
+								
+						</select>
+		        		
+		        		
+<%-- 		        		<label for="dataIndicador">Data-Base</label><input type="text" class="form-control" id="dataIndicador"name="dataIndicador" maxlength="20" required value="<%=dataIndicador%>"/>						 --%>
+					</div> 
+				
+					<div class="form-group">	
+		        		<label for="nomeIndicador">Nome</label>					
+						<input type="text" class="form-control" id="nomeIndicador" name="nomeIndicador"maxlength="150" required value="<%if(nomeIndicador!=null){out.println(nomeIndicador);}%>"/>						
 					</div>
 					
 					<div class="form-group">
@@ -43,17 +60,13 @@
 							<option value="DEOPE" <%if( depIndicador!= null && depIndicador.equals("DEOPE"))
 							{%>selected="selected"<%}%>>DEOPE</option>
 							<option value="DEPRH" <%if( depIndicador!= null && depIndicador.equals("DEPRH"))
-							{%>selected="selected"<%}%>>Tinto</option>
+							{%>selected="selected"<%}%>>DEPRH</option>
 							<option value="DEPTI" <%if( depIndicador!= null && depIndicador.equals("DEPTI"))
 							{%>selected="selected"<%}%>>DEPTI</option>
 						</select>
 					</div>
 					
-		        	<div class="form-group">	
-		        		<label for="dataIndicador">Data-Base</label>					
-						<input type="text" class="form-control" id="dataIndicador" 
-						name="dataIndicador" maxlength="20" required value="<%=dataIndicador%>"/>						
-					</div> 
+		        	
 <!-- 						min="1900" max="2017" -->
 							
 					
@@ -63,6 +76,11 @@
 						required value="<%=metaIndicador%>"/>
 					</div>	
 					
+					
+					<div class="form-group">
+						<label for="valorIndicador">Valor</label>		
+						<input type="text" class="form-control" id="valorIndicador" min="0" name="valorIndicador" value="<%=valorIndicador%>"  />
+					</div>	
 				
 							
 			</fieldset>

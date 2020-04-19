@@ -1,4 +1,3 @@
-
 package indicadores.servlets;
 
 import java.io.IOException;

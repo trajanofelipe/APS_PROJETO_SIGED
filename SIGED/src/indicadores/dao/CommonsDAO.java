@@ -11,7 +11,8 @@ public abstract class CommonsDAO implements GenericDAO{
 		EntityManagerFactory factory = HibernateUtil.getEntityManagerFactory();
 		EntityManager manager = factory.createEntityManager();
 		manager.getTransaction().begin();
-		manager.persist(objeto);
+		//manager.persist(objeto);
+				manager.merge(objeto);
 		manager.getTransaction().commit();
 		manager.close();
 	}
@@ -25,8 +26,8 @@ public abstract class CommonsDAO implements GenericDAO{
 		EntityManagerFactory factory = HibernateUtil.getEntityManagerFactory();
 		EntityManager manager = factory.createEntityManager();
 		manager.getTransaction().begin();
-//		manager.merge(objeto);
-		manager.persist(objeto);
+		manager.merge(objeto);
+//		manager.persist(objeto);
 		manager.getTransaction().commit();
 		manager.close();
 	}

@@ -18,12 +18,12 @@ public class ExcluirIndicadorServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Indicador a excluir
 		int idIndicador = Integer.parseInt(request.getParameter("idIndicador"));
-		String nomeIndicador = request.getParameter("nomeIndicador");
+//		String nomeIndicador = request.getParameter("nomeIndicador");
 		
 		// Encaminhar para a classe especialista
-		String result = "";
+		String result = null;
 		result = IndicadorManager.apagarIndicador(idIndicador);
-		result += nomeIndicador;
+//		result += nomeIndicador;
 		
 		request.setAttribute("mensagem", result);
 		RequestDispatcher view = request.getRequestDispatcher("gerenciarIndicadores.jsp");

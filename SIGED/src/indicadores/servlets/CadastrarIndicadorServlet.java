@@ -21,11 +21,12 @@ public class CadastrarIndicadorServlet extends HttpServlet {
 		String nomeIndicador = request.getParameter("nomeIndicador").trim(); // campo obrigatório		
 		String dataIndicador = request.getParameter("dataIndicador").trim(); // campo obrigatório		
 		String depIndicador = request.getParameter("depIndicador").trim(); // campo obrigatório		
+		int metaIndicador = Integer.parseInt(request.getParameter("metaIndicador").trim()); // campo obrigatório
 		int valorIndicador = Integer.parseInt(request.getParameter("valorIndicador").trim()); // campo obrigatório		
-		int metaIndicador = Integer.parseInt(request.getParameter("metaIndicador").trim()); // campo obrigatório		
+				
 
 		// Encaminhar para a classe especialista
-		String result = IndicadorManager.cadastrarIndicador( dataIndicador, metaIndicador, nomeIndicador, depIndicador, valorIndicador );		
+		String result = IndicadorManager.cadastrarIndicador( nomeIndicador, dataIndicador, depIndicador, metaIndicador, valorIndicador );		
 		request.setAttribute("mensagem", result);
 		RequestDispatcher view = request.getRequestDispatcher("gerenciarIndicadores.jsp");
 		

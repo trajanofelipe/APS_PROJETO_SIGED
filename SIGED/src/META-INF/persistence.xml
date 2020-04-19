@@ -15,7 +15,7 @@
 		<properties>
 			<!--dados da conexao -->
 			<property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC" />
-	      	<property name="javax.persistence.jdbc.url" value="jdbc:sqlite:siged7.db" />
+	      	<property name="javax.persistence.jdbc.url" value="jdbc:sqlite:siged6.db" />
 	      	<property name="javax.persistence.jdbc.user" value="" />
 	      	<property name="javax.persistence.jdbc.password" value="" />
 
@@ -64,7 +64,7 @@
 		<properties>
 			<!--dados da conexao -->
 			<property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC" />
-	      	<property name="javax.persistence.jdbc.url" value="jdbc:sqlite:siged6.db" />
+	      	<property name="javax.persistence.jdbc.url" value="jdbc:sqlite:siged7.db" />
 	      	<property name="javax.persistence.jdbc.user" value="" />
 	      	<property name="javax.persistence.jdbc.password" value="" />
 

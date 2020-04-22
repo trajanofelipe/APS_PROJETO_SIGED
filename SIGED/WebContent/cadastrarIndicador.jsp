@@ -12,8 +12,15 @@
 		String nomeIndicador = (String)request.getAttribute("nomeIndicador");	
 		String dataIndicador = (String)request.getAttribute("dataIndicador");
 		String depIndicador = (String)request.getAttribute("depIndicador");
-		Integer metaIndicador = (Integer)request.getAttribute("metaIndicador");
-		Integer valorIndicador = (Integer)request.getAttribute("valorIndicador");
+		
+		String metaIndicador =  request.getParameter("metaIndicador");
+		
+		metaIndicador = (String)request.getAttribute("metaIndicador");
+		
+		
+		String valorIndicador =  request.getParameter("valorIndicador");
+		
+		valorIndicador = (String)request.getAttribute("valorIndicador");
 		
 	%>
 	<!--  CONTAINER DE MENSAGENS -->

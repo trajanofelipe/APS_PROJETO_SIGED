@@ -8,20 +8,24 @@
 	<%@include file="_cabecalho.jsp"%>
 	
 	<%
-		// Vinho a editar
+		// Indicador a editar
 		String idIndicadorStr = request.getParameter("idIndicador"); // se tiver vindo da lista de indicador
 		if( idIndicadorStr == null ) { // se tiver vindo do servlet de edição
 			idIndicadorStr = (String)request.getAttribute("idIndicador");
 		}
 		Indicador indicadorEd = IndicadorManager.consultarIndicadorPorId(Integer.parseInt(idIndicadorStr));
 			
+
+		
 		// Caso tenha ocorrido erro na edição, recuperar os valores preenchidos
 		String dataIndicador= (String)request.getAttribute("dataIndicador");
 		String nomeIndicador = (String)request.getAttribute("nomeIndicador");	
 		String depIndicador = (String)request.getAttribute("depIndicador");
-		Integer metaIndicador = (Integer)request.getAttribute("metaIndicador");
-		Integer valorIndicador = (Integer)request.getAttribute("valorIndicador");
+		Double metaIndicador = (Double)request.getAttribute("metaIndicador");
+		Double valorIndicador = (Double)request.getAttribute("valorIndicador");
 				
+	
+		
 	%>
 	<!--  CONTAINER DE MENSAGENS -->
 	<%@include file="_containerMensagens.jsp"%>
@@ -62,10 +66,10 @@
 					
 					
 					<%
-						Integer metaIndic =  metaIndicador;
-						if( metaIndic == null ) {
-							metaIndic = indicadorEd.getMetaIndicador();
-						}					
+// 						Integer metaIndic =  metaIndicador;
+// 						if( metaIndic == null ) {
+// 							metaIndic = indicadorEd.getMetaIndicador();
+// 						}					
 					%>
 					
 					<div class="form-group">
@@ -75,10 +79,10 @@
 					</div>	
 					
 					<%
-						Integer valorIndic =  valorIndicador;
-						if( valorIndic  == null ) {
-							valorIndic = indicadorEd.getValorIndicador();
-						}					
+// 						Integer valorIndic =  valorIndicador;
+// 						if( valorIndic  == null ) {
+// 							valorIndic = indicadorEd.getValorIndicador();
+// 						}					
 					%>
 					<div class="form-group">
 						<label for="valorIndicador">Alcance</label>		

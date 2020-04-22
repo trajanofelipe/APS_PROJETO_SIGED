@@ -27,6 +27,17 @@
 					<br></br>	
 					<a href="LimparBdIndicador.do" class="btn btn-primary">Sim</a>
 					<a href="gerenciarIndicadores.jsp" class="btn btn-primary">Não</a>			
+					
+			<%	} else if( operacao.equals("verpainel")) { %>
+					<strong>Deseja proseguir para visualizar os indicadores da data-base e departamento selecionados?</strong>			
+					<br></br>
+					<a href="PainelIndicador.do?depIndicador=<%=request.getParameter("depIndicador")%>
+					&dataIndicador=<%=request.getParameter("dataIndicador")%>" class="btn btn-primary">Sim</a>
+					<a href="index.jsp" class="btn btn-primary">Não</a>		
+					
+					
+					
+					
 			<%	} %>
 			
 			

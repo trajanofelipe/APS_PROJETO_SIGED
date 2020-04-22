@@ -73,7 +73,6 @@ at<%@include file="_import.jsp"%>
 					</div>			
 		        		
 				
-					</div>	 
 					
 						<div class="form-group">	 
 		        		<label for="senhaEmpregado">Senha</label>					 

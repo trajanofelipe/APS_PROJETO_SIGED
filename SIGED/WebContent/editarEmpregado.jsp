@@ -87,7 +87,6 @@
  						}					
 					%>	
 				
-					</div>	 
 					
 						<div class="form-group">	 
 		        		<label for="senhaEmpregado">Senha</label>					 

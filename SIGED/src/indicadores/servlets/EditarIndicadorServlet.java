@@ -24,8 +24,8 @@ public class EditarIndicadorServlet extends HttpServlet {
 		String nomeIndicador = request.getParameter("nomeIndicador").trim(); // campo obrigatório		
 				
 		String depIndicador = request.getParameter("depIndicador").trim(); // campo obrigatório		
-		int metaIndicador = Integer.parseInt(request.getParameter("metaIndicador").trim()); // campo obrigatório
-		int valorIndicador = Integer.parseInt(request.getParameter("valorIndicador").trim()); // campo obrigatório		
+		double metaIndicador = Double.parseDouble(request.getParameter("metaIndicador").trim()); // campo obrigatório
+		double valorIndicador = Double.parseDouble(request.getParameter("valorIndicador").trim()); // campo obrigatório		
 				
 
 		// Encaminhar para a classe especialista

@@ -1,5 +1,6 @@
 package indicadores.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import indicadores.dao.IndicadorDAO;
@@ -7,7 +8,9 @@ import indicadores.dao.IndicadorDAO;
 
 public class IndicadorManager {
 
-	public static String cadastrarIndicador(String nomeIndicador, String dataIndicador, String depIndicador,  int metaIndicador, int valorIndicador) {
+		
+	
+	public static String cadastrarIndicador(String nomeIndicador, String dataIndicador, String depIndicador,  double metaIndicador, double valorIndicador) {
 		
 		IndicadorDAO dao = new IndicadorDAO();
 
@@ -54,7 +57,7 @@ public class IndicadorManager {
 	// TODO Auto-generated constructor stub
 	}
 	
-	public static String editarIndicador(int idIndicador, String dataIndicador, String nomeIndicador, String depIndicador, int metaIndicador, int valorIndicador) {
+	public static String editarIndicador(int idIndicador, String dataIndicador, String nomeIndicador, String depIndicador, double metaIndicador, double valorIndicador) {
 		
 		IndicadorDAO dao = new IndicadorDAO();
 
@@ -115,12 +118,41 @@ public class IndicadorManager {
 		return lista;
 	}
 
+	
+	public static List<String> consultarIndicadorPorNome() {
+		IndicadorDAO dao = new IndicadorDAO();
+		List<Indicador> indicador = dao.selecionarTodos();
+		List<String> nome = new ArrayList<String>();
+		
+		for (Indicador ind : indicador) {
+				
+				nome.add(ind.getNomeIndicador());
+			
+		}
+		
+		
+		
+		
+		return nome;
+	}
+	
+	public static double resultado(double valorIndicador, double metaIndicador) {
+		IndicadorDAO dao = new IndicadorDAO();
+		
+		double resultado = dao.resultado(valorIndicador, metaIndicador);
+		return resultado;
+	}
+
+	
+	
 	public static Indicador consultarIndicadorPorId( int idIndicador) {
 		IndicadorDAO dao = new IndicadorDAO();
 		Indicador indicador = dao.selecionarPorId(idIndicador);
 		return indicador;
 	}
 
+
+	
 
 	// Limpeza do BD
 	
@@ -155,9 +187,30 @@ public class IndicadorManager {
 		
 		
 	}
-
 	
-	public static String lancarIndicador(int idIndicador, String dataIndicador, String nomeIndicador, String depIndicador, int metaIndicador, int valorIndicador) {
+	public static List<Indicador> consultarIndicadorPorDataDep( String dataIndicador, String depIndicador) {
+		IndicadorDAO dao = new IndicadorDAO();
+		List <Indicador> indicador = dao.selecionarIndicadorPorData(dataIndicador, depIndicador);
+		return indicador;
+	}
+	
+
+		
+//		try {
+//			dao.atualizar(existente);
+//			String mensagem = "Indicador " + existente.getNomeIndicador() + " lançado com sucesso.";
+//			return mensagem;
+//		} catch( Exception e ) {
+//			e.printStackTrace();
+//			String mensagem = "Não foi possível ver o Indicador";
+//			System.out.println(existente.getNomeIndicador());
+//			return mensagem;
+//		}
+	
+	
+	
+	
+	public static String lancarIndicador(int idIndicador, String dataIndicador, String nomeIndicador, String depIndicador, double metaIndicador, double valorIndicador) {
 		
 		IndicadorDAO dao = new IndicadorDAO();
 
@@ -195,5 +248,6 @@ public class IndicadorManager {
 			return mensagem;
 		}
 	}
+
 	
 }

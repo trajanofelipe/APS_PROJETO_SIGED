@@ -57,27 +57,25 @@ if(usuario == null || senha == null){
 	    	
 	    	
 	    	
-	    </div>
-	    
-	    <div class="panel panel-info">
-		    <div class="panel-heading"><strong>ANTERIOR PRECISA TIRAR</strong></div>
-<!-- 	    	<div class="panel-body"> -->
-<!-- 	    		<a href="#" data-toggle="popover" data-trigger="hover" -->
-<!-- 	    		data-content="Permite o cadastro de novo pedido, consulta, edição e remoção de pedidos.">Gerenciar Pedidos</a> -->
-<!-- 	    	</div> -->
-<!-- 	    	<div class="panel-body"> -->
-<!-- 	    		<a href="#" data-toggle="popover" data-trigger="hover" data-content="Exibe relatórios das vendas.">Relatórios</a> -->
+<!-- 	    </div> -->
+<!-- 	    <div class="panel panel-info"> -->
+<!-- 		    <div class="panel-heading"><strong>ANTERIOR PRECISA TIRAR</strong></div> -->
+<!--  	    	<div class="panel-body">  -->
+<!--  	    		<a href="#" data-toggle="popover" data-trigger="hover" -->
+<!--  	    		data-content="Permite o cadastro de novo pedido, consulta, edição e remoção de pedidos.">Gerenciar Pedidos</a> -->
+<!--  	    	</div>  -->
+<!-- 	    	<div class="panel-body">  -->
+<!-- 	    		<a href="#" data-toggle="popover" data-trigger="hover" data-content="Exibe relatórios das vendas.">Relatórios</a>  -->
 	    		
-	    		 <div class="panel-body"> 
-	    		<a href="gerenciarVinhos.jsp" data-toggle="popover" data-trigger="hover" data-content=
-				"Permite o cadastro de novo vinho, consulta, edição e remoção de vinhos.">Gerenciar Vinhos</a> 
- 	    	</div> 
-	    	</div>
-	    </div>
-	    
-	    
-	    
-	</div>
+<!-- 	    		 <div class="panel-body">  -->
+<!-- 	    		<a href="gerenciarVinhos.jsp" data-toggle="popover" data-trigger="hover" data-content= -->
+<!-- 				"Permite o cadastro de novo vinho, consulta, edição e remoção de vinhos.">Gerenciar Vinhos</a>  -->
+<!--  	    	</div>  -->
+<!-- 	    	</div> -->
+<!-- 	    </div>     -->
+<!-- 	</div> -->
+	
+	
 	<!-- fim .container da pagina -->
 </body>
 </html>

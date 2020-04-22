@@ -19,8 +19,14 @@
 		String dataIndicador= (String)request.getAttribute("dataIndicador");
 		String nomeIndicador = (String)request.getAttribute("nomeIndicador");	
 		String depIndicador = (String)request.getAttribute("depIndicador");
-		Integer metaIndicador = (Integer)request.getAttribute("metaIndicador");
-		Integer valorIndicador = (Integer)request.getAttribute("valorIndicador");
+		String metaIndicador =  request.getParameter("metaIndicador");
+		
+		metaIndicador = (String)request.getAttribute("metaIndicador");
+		
+		
+		String valorIndicador =  request.getParameter("valorIndicador");
+		
+		valorIndicador = (String)request.getAttribute("valorIndicador");
 				
 	%>
 	<!--  CONTAINER DE MENSAGENS -->
@@ -70,10 +76,10 @@
 					
 					
 					<%
-						Integer metaIndic =  metaIndicador;
-						if( metaIndic == null ) {
-							metaIndic = indicadorEd.getMetaIndicador();
-						}					
+// 						String metaIndic =  metaIndicador;
+// 						if( metaIndic == null ) {
+// 							metaIndic = indicadorEd.getMetaIndicador();
+// 						}					
 					%>
 					
 					<div class="form-group">
@@ -83,10 +89,10 @@
 					</div>	
 					
 					<%
-						Integer valorIndic =  valorIndicador;
-						if( valorIndic  == null ) {
-							valorIndic = indicadorEd.getValorIndicador();
-						}					
+// 						Double valorIndic = (Double) valorIndicador;
+// 						if( valorIndic  == null ) {
+// 							valorIndic = indicadorEd.getValorIndicador();
+// 						}					
 					%>
 					<div class="form-group">
 						<label for="valorIndicador">Alcance</label>		

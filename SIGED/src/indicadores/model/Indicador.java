@@ -28,10 +28,10 @@ public class Indicador {
 	private String nomeIndicador;
 	
 	@Column(name="valorIndicador")
-	private int valorIndicador;
+	private double valorIndicador;
 	
 	@Column(name="metaIndicador")
-	private int metaIndicador;
+	private double metaIndicador;
 
 	
 
@@ -70,19 +70,19 @@ public class Indicador {
 		this.nomeIndicador = nomeIndicador;
 	}
 
-	public int getValorIndicador() {
+	public double getValorIndicador() {
 		return valorIndicador;
 	}
 
-	public void setValorIndicador(int valorIndicador) {
+	public void setValorIndicador(double valorIndicador) {
 		this.valorIndicador = valorIndicador;
 	}
 
-	public int getMetaIndicador() {
+	public double getMetaIndicador() {
 		return metaIndicador;
 	}
 
-	public void setMetaIndicador(int metaIndicador) {
+	public void setMetaIndicador(double metaIndicador) {
 		this.metaIndicador = metaIndicador;
 	}
 	

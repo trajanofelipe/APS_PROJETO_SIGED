@@ -4,19 +4,19 @@
 <head>
 <script src="js/jquery-3.4.1.js"></script>
 <script>
-$(function(){
-	nom="";
+// $(function(){
+// 	nom="";
 	
-	$("#nomeIndicador").change(function(e){
+// 	$("#nomeIndicador").change(function(e){
 	
-		var nom = $("#nomeIndicador option:selected").
+// 		var nom = $("#nomeIndicador option:selected").
 		
-  		$("#rstIndicador").val(nom);
+//   		$("#rstIndicador").val(nom);
 		
-	})
+// 	})
 	
 	
-})
+// })
 	</script>
 
 

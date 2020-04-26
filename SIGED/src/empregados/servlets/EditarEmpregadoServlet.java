@@ -21,7 +21,7 @@ public class EditarEmpregadoServlet extends HttpServlet {
 		String nomeEmpregado = request.getParameter("nomeEmpregado").trim(); // campo obrigatório		
 		String cargoEmpregado = request.getParameter("cargoEmpregado").trim(); // campo obrigatório
 		String depEmpregado = request.getParameter("depEmpregado").trim(); // campo obrigatório
-		int senhaEmpregado = Integer.parseInt(request.getParameter("senhaEmpregado").trim()); // campo obrigatório	
+		String senhaEmpregado = request.getParameter("senhaEmpregado").trim(); // campo obrigatório	
 		
 		// Encaminhar para a classe especialista
 		String result = EmpregadoManager.editarEmpregado( matEmpregado, nomeEmpregado, cargoEmpregado, senhaEmpregado, depEmpregado);		

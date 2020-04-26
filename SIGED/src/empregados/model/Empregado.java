@@ -3,8 +3,8 @@ package empregados.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+//import javax.persistence.GeneratedValue;
+//import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -30,7 +30,8 @@ public class Empregado {
 	private String depEmpregado;
 	
 	@Column(name = "senhaEmpregado")
-	private int senhaEmpregado;
+	private String senhaEmpregado;
+
 	
 	public int getMatEmpregado() {
 		return matEmpregado;
@@ -56,11 +57,11 @@ public class Empregado {
 		this.cargoEmpregado = cargoEmpregado;
 	}
 
-	public int getSenhaEmpregado() {
+	public String getSenhaEmpregado() {
 		return senhaEmpregado;
 	}
 
-	public void setSenhaEmpregado(int senhaEmpregado) {;
+	public void setSenhaEmpregado(String senhaEmpregado) {;
 		this.senhaEmpregado = senhaEmpregado;
 	}
 
@@ -72,8 +73,7 @@ public class Empregado {
 		this.depEmpregado = depEmpregado;
 	}
 
-	
-	
+
 	
 	
 //	public int getIdEmpregado() {

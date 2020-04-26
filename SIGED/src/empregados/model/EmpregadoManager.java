@@ -1,16 +1,18 @@
 package empregados.model;
 import java.util.List;
 
+//import org.hibernate.mapping.Map;
+
 import empregados.dao.EmpregadoDAO;
 
 
 public class EmpregadoManager {
 
-	public static String cadastrarEmpregado(int matEmpregado, String nomeEmpregado, String cargoEmpregado, int senhaEmpregado, String depEmpregado) {
+	public static String cadastrarEmpregado(int matEmpregado, String nomeEmpregado, String cargoEmpregado, String senhaEmpregado, String depEmpregado) {
 		EmpregadoDAO dao = new EmpregadoDAO();
 
 		// Verifica se todos os campos estão preenchidos
-		if( nomeEmpregado == null || matEmpregado == 0|| cargoEmpregado == null || senhaEmpregado == 0 || depEmpregado == null) { 
+		if( nomeEmpregado == null || matEmpregado == 0|| cargoEmpregado == null || senhaEmpregado == null || depEmpregado == null) { 
 			String mensagem = "Não foi possível cadastrar o empregado: Preencha todos os campos obrigatórios.";
 			return mensagem;
 		}
@@ -45,11 +47,11 @@ public class EmpregadoManager {
 	super();
 	// TODO Auto-generated constructor stub
 	}
-	public static String editarEmpregado(int matEmpregado, String nomeEmpregado, String cargoEmpregado, int senhaEmpregado, String depEmpregado) {
+	public static String editarEmpregado(int matEmpregado, String nomeEmpregado, String cargoEmpregado, String senhaEmpregado, String depEmpregado) {
 		EmpregadoDAO dao = new EmpregadoDAO();
 
 		// Verifica se todos os campos estão preenchidos
-		if( nomeEmpregado == null || matEmpregado == 0 || cargoEmpregado== null || senhaEmpregado == 0 || depEmpregado == null) { 
+		if( nomeEmpregado == null || matEmpregado == 0 || cargoEmpregado== null || senhaEmpregado == null || depEmpregado == null) { 
 			String mensagem = "Não foi possível editar o empregado: Preencha todos os campos obrigatórios.";
 			return mensagem;
 		}
@@ -103,13 +105,32 @@ public class EmpregadoManager {
 		List<Empregado> lista = dao.selecionarTodos();
 		return lista;
 	}
+	
+	public static Empregado login(String nomeEmpregado, String senhaEmpregado) {
+		EmpregadoDAO dao = new EmpregadoDAO();
+		Empregado empregado = dao.login(nomeEmpregado, senhaEmpregado);
+		
+		return empregado;
+	}
 
 	public static Empregado consultarEmpregadosPorMat( int matEmpregado ) {
 		EmpregadoDAO dao = new EmpregadoDAO();
 		Empregado empregado = dao.selecionarPorMat(matEmpregado);
 		return empregado;
 	}
+	
+	public static Empregado consultarEmpregadosPorNome(String nomeEmpregado ) {
+		EmpregadoDAO dao = new EmpregadoDAO();
+		Empregado empregado = dao.selecionarPorNome(nomeEmpregado);
+		return empregado;
+	}
+	
 
+//	public static Empregado consultarEmpregadosLogin( String nomeEmpregado, int senhaEmpregado ) {
+//		EmpregadoDAO dao = new EmpregadoDAO();
+//		Empregado empregado = dao.selecionarPorMat(matEmpregado);
+//		return empregado;
+//	}
 
 	// Limpeza do BD
 	
@@ -131,33 +152,50 @@ public class EmpregadoManager {
 		novo.setMatEmpregado(111);
 		novo.setNomeEmpregado("brunoleite");
 		novo.setCargoEmpregado("Analista de Desenvolvimento");
-		novo.setSenhaEmpregado(1111);
+		novo.setSenhaEmpregado("1111");
 		novo.setDepEmpregado("DEOPE");
 		empregadoDao.inserir(novo);
 		
 		novo.setMatEmpregado(222);
 		novo.setNomeEmpregado("andresilva");
 		novo.setCargoEmpregado("Gestor");
-		novo.setSenhaEmpregado(2222);
+		novo.setSenhaEmpregado("2222");
 		novo.setDepEmpregado("DEPRH");
 		empregadoDao.inserir(novo);
 			
 		novo.setMatEmpregado(333);
 		novo.setNomeEmpregado("rafaelsantos");
 		novo.setCargoEmpregado("Analista de Desenvolvimento");
-		novo.setSenhaEmpregado(3333);
+		novo.setSenhaEmpregado("3333");
 		novo.setDepEmpregado("DEPRH");
 		empregadoDao.inserir(novo);
 		
 		novo.setMatEmpregado(444);
 		novo.setNomeEmpregado("hicarosouza");
 		novo.setCargoEmpregado("Analista do Sistema");
-		novo.setSenhaEmpregado(4444);
+		novo.setSenhaEmpregado("4444");
 		novo.setDepEmpregado("DEPTI");
 		empregadoDao.inserir(novo);
 		
 	}
 	
-	
+//		public String login(String nomeEmpregado, String senhaEmpregado) {
+//			EmpregadoDAO dao = new EmpregadoDAO();
+//			
+//			
+//			
+//			if(dao.login(nomeEmpregado, senhaEmpregado) == null) {
+//				return null;
+//				
+//			}else {
+//				
+//				Map <String, Object> session = ActionContext.getContext().getSession();
+//				session.put("nomeEmpregado", nomeEmpregado);
+//				return 
+//				
+//			}
+//			
+//			
+//		}
 	
 }

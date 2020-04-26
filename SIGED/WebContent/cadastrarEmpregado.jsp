@@ -13,7 +13,7 @@ at<%@include file="_import.jsp"%>
 				String nomeEmpregado = (String)request.getAttribute("nomeEmpregado");	
 				String cargoEmpregado = (String)request.getAttribute("cargoEmpregado");
 				String depEmpregado = (String)request.getAttribute("depEmpregado");
-				Integer senhaEmpregado = (Integer)request.getAttribute("senhaEmpregado");
+				String senhaEmpregado = (String)request.getAttribute("senhaEmpregado");
 				
 	%>
 	
@@ -76,7 +76,7 @@ at<%@include file="_import.jsp"%>
 					
 						<div class="form-group">	 
 		        		<label for="senhaEmpregado">Senha</label>					 
- 						<input type="number" min="1000" max="9999" class="form-control" id="senhaEmpregado"
+ 						<input type="text" min="1000" max="9999" class="form-control" id="senhaEmpregado"
  						name="senhaEmpregado" maxlength="4" length="15"/>
  						
  					</div> 

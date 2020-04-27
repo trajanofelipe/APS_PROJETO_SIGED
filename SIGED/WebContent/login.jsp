@@ -18,16 +18,26 @@
 	<form action="login.jsp" method="post">
 	
 		usuário: <br/><input type="text" id ="usuario" name="usuario"/><br/>
-		senha:  <br/><input type="text" id="senha" name="senha"/><br/>
+		senha:  <br/><input type="password" id="senha" name="senha"/><br/>
 		
 		
 	
 	<%
 	
 	
+	
+	
 	String usuario = request.getParameter("usuario");
 	
 	String senha = request.getParameter("senha");	
+	
+	
+	if(usuario == null || senha == null){
+		
+		
+	} else {
+		
+	
 	
 // 	String user = "felipe";
 	
@@ -74,6 +84,7 @@ for (Empregado e : emp3){
 			session.setAttribute("usuario", usuario);
 							session.setAttribute("senha", senha);
 							session.setAttribute("cargo", cargo);
+							session.setAttribute("dep", e.getDepEmpregado());
 					 		response.sendRedirect("index.jsp");
 
 		return;
@@ -88,7 +99,12 @@ for (Empregado e : emp3){
 
 	}
 	
+	if(naoenc.size() == emp3.size()){
+		
+		JOptionPane.showMessageDialog(null, "Usuário/Senha inválido(s)","Falha de login",JOptionPane.WARNING_MESSAGE);
+	}
 }
+	}
 // System.out.println(naoenc.size());
 // System.out.println(emp3.size());
 // if(naoenc.size() == emp3.size()){

@@ -2,28 +2,22 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<script src="js/jquery-3.4.1.js"></script>
-<script>
-// $(function(){
-// 	nom="";
-	
-// 	$("#nomeIndicador").change(function(e){
-	
-// 		var nom = $("#nomeIndicador option:selected").
-		
-//   		$("#rstIndicador").val(nom);
-		
-// 	})
-	
-	
-// })
-	</script>
+
 
 
 
 	<%@include file="_header.jsp"%>
 </head>
 <body>
+
+<script src="js/jquery-3.4.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+
+
+
+
+
 	<%@include file="_cabecalho.jsp"%>
 	<%
 	// Indicador a editar
@@ -200,9 +194,39 @@
 							value="<%=(100 * (j.getValorIndicador() / j.getMetaIndicador())) + "%"   %>">	
 							<br></br>												
 							</input>											
+							<div style="width: 400px; height: 400px;"> <canvas id="grafico"></canvas>
+					<script>
+							var ctx  = document.getElementById("grafico")
+
+							// type do grafic, data, option
 							
+							var chartGraph = new Chart(ctx, {
+								
+								type: 'bar',
+								data: {
+									labels: [<%=j.getNomeIndicador() %>],
+									dataset: [{
+										
+										label: "<%=j.getNomeIndicador() %>",
+										data: [<%=(100 * (j.getValorIndicador() / j.getMetaIndicador()))%>]
+										
+									}]
+									
+								}
+								
+								
+								
+							})
+								
+								
+									
+								
+								
+								
+								
 							
-							
+					</script>
+							</div>
 						
 						<%
 					
@@ -211,22 +235,6 @@
 						
 						
 						
-						
-					
-<!-- 					</div> -->
-					
-				
-					
-<!-- 						<div class="form-group">	 -->
-		        		
-<!-- 		        				<label for="depIndicador">Meta</label>		 -->
-<!-- 						<input class="form-control" id="rstIndicador" name="rstIndicador" required readonly="readonly"  -->
-<!--  							></input> -->
- 					
- 							
-					
-<!-- 					</div> -->
-					
 					<%	
 						
 						
@@ -237,6 +245,8 @@
 	
 			
 	</div>
+	
+
 
 </body>
 </html>

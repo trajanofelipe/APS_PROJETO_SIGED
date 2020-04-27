@@ -20,7 +20,7 @@ if(usuario == null || senha == null || cargo == null){
 // 		response.sendRedirect("loginDAO.java");
 	} 
 	else {
-		out.println("Bem-vindo, " + usuario + "<br/><br/>");
+		out.println("Bem-vindo, " + usuario + "<br/>");
 		
 // 		System.out.println(usuario + "" + senha + "" + cargo);
 		
@@ -41,8 +41,6 @@ if(usuario == null || senha == null || cargo == null){
 		  
 		     if(cargo.equals("Analista do Sistema")){
 		    	 
-		    	 
-		   
 		    
 		     %>
 		     
@@ -96,7 +94,7 @@ if(usuario == null || senha == null || cargo == null){
 	    	
 	    	
 	    	<%
-} else {
+} if(cargo.equals("Analista de Desenvolvimento")){
 	
 	
    	

@@ -11,7 +11,11 @@
 	<%			
 		// Lista de indicadores
 		List<Indicador> indicadores = IndicadorManager.consultarTodosIndicador();
-		
+	String cargo = (String) session.getAttribute("cargo");
+	String dep = (String) session.getAttribute("dep");
+	int i = 0;
+	
+	
 		if( indicadores.isEmpty() ) {
 	%>	
 		<div class="container"> 
@@ -53,7 +57,14 @@
 	                        <th><input type="text" class="form-control" placeholder="Alcançado" disabled></th>
 	                    </tr>
 	                </thead>
-	                <% for( Indicador indicador : indicadores) { %>
+	                <% for( Indicador indicador : indicadores) { 
+	                
+	                		
+	                	
+	                	if(indicador.getDepIndicador().equals(dep)){
+	                		i++;
+	                	
+	                %>
 				      <tr>
 				      	<td>
 				      	
@@ -83,7 +94,19 @@
 				      	<td><%=indicador.getValorIndicador()%></td>
 				      	
 				      </tr>
-				    <% } %>
+				    <% } 
+	                	
+	                	
+				    
+				    }
+				    
+	                if(i == 0){
+                		
+                		JOptionPane.showMessageDialog(null, "não há indicadores para o seu dept");
+                		response.sendRedirect("index.jsp");
+                	}
+				    
+				    %>
 	            </table>
 	        </div>
     	</div>  

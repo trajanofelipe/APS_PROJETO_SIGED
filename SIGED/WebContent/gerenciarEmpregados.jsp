@@ -74,7 +74,7 @@
 				      	<td><%=empregado.getNomeEmpregado()%></td>				      	
 				      	<td><%=empregado.getCargoEmpregado()%></td>
 				      	<td><%=empregado.getDepEmpregado()%></td>
-				      	<td><%=empregado.getSenhaEmpregado()%></td>
+				      	<td><%=empregado.getSenhaEmpregado() %></td>
 				      	
 				      </tr>
 				    <% } %>

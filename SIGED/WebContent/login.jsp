@@ -19,15 +19,15 @@
 	
 		usuário: <br/><input type="text" id ="usuario" name="usuario"/><br/>
 		senha:  <br/><input type="text" id="senha" name="senha"/><br/>
-		<input type="submit" value="Acessar"/>
+		
+		
 	
-	</form>
 	<%
 	
 	
 	String usuario = request.getParameter("usuario");
 	
-	String senha = request.getParameter("senha");
+	String senha = request.getParameter("senha");	
 	
 // 	String user = "felipe";
 	
@@ -59,6 +59,7 @@
 // System.out.println(dao);
 List<Empregado> emp3 = EmpregadoManager.consultarTodosEmpregado();
 // System.out.println(emp3);
+List<Empregado> naoenc = new ArrayList<Empregado>();
 
 for (Empregado e : emp3){
 	
@@ -68,14 +69,18 @@ for (Empregado e : emp3){
 // 		System.out.println(e.getNomeEmpregado());
 // 		System.out.println(e.getSenhaEmpregado());
 // 		System.out.println(e.getCargoEmpregado());
-	
+			String cargo = 	e.getCargoEmpregado();
+
 			session.setAttribute("usuario", usuario);
 							session.setAttribute("senha", senha);
+							session.setAttribute("cargo", cargo);
 					 		response.sendRedirect("index.jsp");
 
 		return;
 		
 	} else {
+		
+		naoenc.add(e);
 		
 // 		System.out.println("não achou");
 
@@ -84,6 +89,22 @@ for (Empregado e : emp3){
 	}
 	
 }
+// System.out.println(naoenc.size());
+// System.out.println(emp3.size());
+// if(naoenc.size() == emp3.size()){
+	
+// 	alert.
+// }
+
+
+
+// 	if (emp3.size() == naoenc.size()){
+		
+// 	}else{
+// 		System.out.println("Login/Senha Incorreto(s)");
+// 	}
+	
+
 
 
 
@@ -152,7 +173,9 @@ for (Empregado e : emp3){
 			
 		
 	%>
+		<input type="submit" value="Acessar"/>
 	
+	</form>
 	
 </body>
 </html>

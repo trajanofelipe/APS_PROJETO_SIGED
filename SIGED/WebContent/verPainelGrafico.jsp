@@ -176,21 +176,30 @@
 					
 					<div class="form-group">	
 		        		
-		        				<label for="nomeIndicador">Indicador</label>		
-						
-						<select class="form-control" id="nomeIndicador" name="nomeIndicador" required readonly="readonly"  >
+		        				
 						<%
 						
 						for (Indicador j : indicadorEd){
+//  						j.getNomeIndicador().equals(i.getNomeIndicador());		
+							%>	
 							
-//  						j.getNomeIndicador().equals(i.getNomeIndicador());			
-					
-						%>
+							<label for="nomeIndicador">Indicador <%=j.getNomeIndicador()%></label>		
+<!-- 							<input class="form-control" id="nomeIndicador" name="nomeIndicador" required readonly="readonly" -->
 						
-						
-							<option value="<%=j.getMetaIndicador()%>"
-							 selected=""><%=j.getNomeIndicador()%></option>
 							
+						
+<%-- 							value="<%=j.getNomeIndicador()%>">													 --%>
+<!-- 							</input> -->
+							
+							<br>
+							<label for="resIndicador">Resultado</label>	
+							<input class="form-control" id="nomeIndicador" name="nomeIndicador" required readonly="readonly"
+						
+							
+						
+							value="<%=(100 * (j.getValorIndicador() / j.getMetaIndicador())) + "%"   %>">	
+							<br></br>												
+							</input>											
 							
 							
 							
@@ -200,23 +209,23 @@
 						}
 						%>
 						
-						</select>
+						
 						
 						
 					
-					</div>
+<!-- 					</div> -->
 					
 				
 					
-						<div class="form-group">	
+<!-- 						<div class="form-group">	 -->
 		        		
-		        				<label for="depIndicador">Reslt</label>		
-						<input class="form-control" id="rstIndicador" name="rstIndicador" required readonly="readonly" 
- 							
+<!-- 		        				<label for="depIndicador">Meta</label>		 -->
+<!-- 						<input class="form-control" id="rstIndicador" name="rstIndicador" required readonly="readonly"  -->
+<!--  							></input> -->
  					
- 							/>
+ 							
 					
-					</div>
+<!-- 					</div> -->
 					
 					<%	
 						

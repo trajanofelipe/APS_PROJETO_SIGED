@@ -112,12 +112,13 @@
 			    	
 			    	  	  </tr> 
 			    	<%
-					novalista.add(indicador1);		
+					novalista.add(indicador1);
+// 			    	System.out.println(indicador1 + " item1 nova lista");
 				} else{
 					
 					if(novalista.contains(indicador1)){
-					
-						break;
+// 					System.out.println(indicador1 + " ja existe");
+						
 						
 					}
 					else{
@@ -145,6 +146,7 @@
 				    	  	  </tr> 
 				    	<%
 						novalista.add(indicador1);
+// 				    	System.out.println(indicador1 + " add nova lista");
 				
 					}
 		

@@ -7,14 +7,30 @@
 
 
 	<%@include file="_header.jsp"%>
+	<link rel="stylesheet" type="text/css" href="css/grafico.css">
 </head>
 <body>
 
 <script src="js/jquery-3.4.1.js"></script>
+<script src="js/jquery.easypiechart.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
 
+<script>
+$(function(){
 
+	$('.chart').easyPieChart({
+		
+		size: 180,
+		barColor: '#17d3e6',
+		scaleColor: false,
+		lineWidth: 15,
+		trackColor: '#373737',
+		
+	})
+})
+
+</script>
 
 
 
@@ -40,32 +56,6 @@
 			List <Indicador> indicadorEd = IndicadorManager.consultarIndicadorPorDataDep(dataIndicador, depIndicador);
 			
 			
-// 			System.out.println(indicadorEd.size() + " todos");
-// 			indicadorEd = IndicadorManager.consultarIndicadorPorDataDep(dataI, depI);
-					
-			
-
-//  			for (Indicador i : indicadorEd){
-			
-					
-// 				System.out.println(i.getNomeIndicador());
-// 				System.out.println(i.getDataIndicador());
-// 				System.out.println(i.getDepIndicador());
-// 				System.out.println(i.getMetaIndicador());
-// 				System.out.println(i.getValorIndicador());
-// 				System.out.println(i.getValorIndicador() / i.getMetaIndicador());
-//  			}
-			
-// 			System.out.println(indicadorEd.size());
-			
-// 			String	dataIndicador = (String)request.getAttribute("dataIndicador");
-// 			System.out.println(dataI);
-// 			String	depIndicador= (String)request.getAttribute("depIndicador");
-// 			String nomeIndicador = (String)request.getAttribute("nomeIndicador");
-			
-			
-// 			indicadorEd =	IndicadorManager.consultarTodosIndicador();
-			
 			
 			if( indicadorEd.isEmpty() ) {
 				%>	
@@ -73,9 +63,9 @@
 						<div class="alert alert-danger">		
 							<strong>Não há indicadores cadastrados.</strong>
 			<!-- 				<br></br><a href="editarIndicador.jsp" class="btn btn-success">Lançar Novo</a> -->
-							
+							</div>
 						</div>
-					</div>		
+						
 				<%
 					} else {
 			
@@ -86,7 +76,7 @@
 	<%@include file="_containerMensagens.jsp"%>
 
 		
-	 <!-- EDIÇÃO DE PRODUTO -->
+	
 	<div class="container">		
 		<form action="PainelIndicador.do" method="post">
 			<fieldset>
@@ -112,8 +102,7 @@
 							
 							%>
 					    	
-					    	<tr>
-						      	<td>
+					    	
 						      	
 						      	<%
 						      	
@@ -150,101 +139,56 @@
 					%>
 					
 				
-					
-		        	<div class="form-group">	
-		        		
-		        				<label for="dataIndicador">Data-Base</label>		
-						<input class="form-control" id="dataIndicador" name="dataIndicador" required readonly="readonly"
- 							value="<%=i.getDataIndicador()%>"/>
-					
-					</div>
-					
-					
-		        	<div class="form-group">	
-		        		
-		        				<label for="depIndicador">Departamento</label>		
-						<input class="form-control" id="depIndicador" name="depIndicador" required readonly="readonly"
- 							value="<%=i.getDepIndicador()%>"/>
-					
-					</div>
-					
-					<div class="form-group">	
+				
+						<div class= "section-title">
+							<h1>Data-Base <%=i.getDataIndicador()%> // Departamento <%=i.getDepIndicador()%></h1>
+							
+						</div>
+
 		        		
 		        				
 						<%
 						
 						for (Indicador j : indicadorEd){
 //  						j.getNomeIndicador().equals(i.getNomeIndicador());		
+							double res = (100 * (j.getValorIndicador() / j.getMetaIndicador()));
 							%>	
 							
-							<label for="nomeIndicador">Indicador <%=j.getNomeIndicador()%></label>		
-<!-- 							<input class="form-control" id="nomeIndicador" name="nomeIndicador" required readonly="readonly" -->
-						
 							
-						
-<%-- 							value="<%=j.getNomeIndicador()%>">													 --%>
-<!-- 							</input> -->
 							
-							<br>
-							<label for="resIndicador">Resultado</label>	
-							<input class="form-control" id="nomeIndicador" name="nomeIndicador" required readonly="readonly"
-						
-							
-						
-							value="<%=(100 * (j.getValorIndicador() / j.getMetaIndicador())) + "%"   %>">	
-							<br></br>												
-							</input>											
-							<div style="width: 400px; height: 400px;"> <canvas id="grafico"></canvas>
-					<script>
-							var ctx  = document.getElementById("grafico")
-
-							// type do grafic, data, option
-							
-							var chartGraph = new Chart(ctx, {
-								
-								type: 'bar',
-								data: {
-									labels: [<%=j.getNomeIndicador() %>],
-									dataset: [{
-										
-										label: "<%=j.getNomeIndicador() %>",
-										data: [<%=(100 * (j.getValorIndicador() / j.getMetaIndicador()))%>]
-										
-									}]
-									
-								}
-								
-								
-								
-							})
-								
-								
-									
-								
-								
-								
-								
-							
-					</script>
-							</div>
-						
-						<%
 					
-						}
-						%>
+					<div class="box">
+					<div class="chart" data-percent="<%=res%>"><%=res%>%</div> 
+						<h2><%=j.getNomeIndicador()%></h2>		
+					<br></br>
+								
+						</div>
+						<%
 						
+						}
+						
+						%>
+								
 						
 						
 					<%	
 						
 						
-				}
-					}
+				}%>
+					
 				
-					%>	
+					
+					
+					
+					<%}
+					%>
+				
+						
 	
-			
-	</div>
+	</fieldset>
+	</form>
+	</div>		
+
 	
 
 

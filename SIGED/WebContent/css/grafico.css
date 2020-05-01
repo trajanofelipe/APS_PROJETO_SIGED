@@ -1,0 +1,65 @@
+@charset "UTF-8";
+body
+{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;	
+/* 	background: #19182d; */
+	
+}
+
+.container 
+{
+	width: 1000px;
+	margin: 0 auto;
+/* 	position: absolute; */
+/* 	top: 50%; */
+/* 	left: 50%; */
+/* 	transform: translate (-50%, -50%); */
+
+}
+
+.container .box h2
+{
+	text-align: center;
+/* 	color: #fff; */
+}
+
+.container .box
+{
+	width: 25%;
+	float: left;
+}
+
+.container .box .chart 
+{
+	position: relative;	
+	 width: 180px;
+	 height: 180px;
+	 margin: 0 auto;
+	 text-align: center;
+	 font-size: 30px;
+	 line-height: 180px;
+/* 	 color: #fff; */
+	 
+}
+
+.container .box canvas
+{
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+

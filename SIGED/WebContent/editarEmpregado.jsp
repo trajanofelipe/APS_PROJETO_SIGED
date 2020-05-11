@@ -55,7 +55,7 @@
 					
 						<div class="form-group">
 						<label>Departamento</label>
-						<select class="form-control" id="depEmpregado" name="depEmpregado" required>
+						<select class="form-control" id="depEmpregado" name="depEmpregado" required">
 							<option value="DEOPE" <%if( depEmpregado != null &&
 							depEmpregado.equals("DEOPE")){%>selected="selected"<%}%>>DEOPE</option>
 							<option value="DEPRH" <%if( depEmpregado!= null && 

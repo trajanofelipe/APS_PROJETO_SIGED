@@ -150,23 +150,44 @@ public class EmpregadoManager {
 		EmpregadoDAO empregadoDao = new EmpregadoDAO();
 		Empregado novo = new Empregado();
 		novo.setMatEmpregado(111);
-		novo.setNomeEmpregado("brunoleite");
+		novo.setNomeEmpregado("marcelosilva");
 		novo.setCargoEmpregado("Analista de Desenvolvimento");
 		novo.setSenhaEmpregado("1111");
-		novo.setDepEmpregado("DEOPE");
+		novo.setDepEmpregado("DEPTI");
+		empregadoDao.inserir(novo);
+		
+		novo.setMatEmpregado(121);
+		novo.setNomeEmpregado("andreleite");
+		novo.setCargoEmpregado("Gestor");
+		novo.setSenhaEmpregado("2121");
+		novo.setDepEmpregado("DEPTI");
 		empregadoDao.inserir(novo);
 		
 		novo.setMatEmpregado(222);
-		novo.setNomeEmpregado("andresilva");
-		novo.setCargoEmpregado("Gestor");
+		novo.setNomeEmpregado("felipevelozo");
+		novo.setCargoEmpregado("Analista de Desenvolvimento");
 		novo.setSenhaEmpregado("2222");
-		novo.setDepEmpregado("DEPRH");
+		novo.setDepEmpregado("DEOPE");
 		empregadoDao.inserir(novo);
 			
 		novo.setMatEmpregado(333);
-		novo.setNomeEmpregado("rafaelsantos");
-		novo.setCargoEmpregado("Analista de Desenvolvimento");
+		novo.setNomeEmpregado("rafaelvieira");
+		novo.setCargoEmpregado("Gestor");
 		novo.setSenhaEmpregado("3333");
+		novo.setDepEmpregado("DEOPE");
+		empregadoDao.inserir(novo);
+		
+		novo.setMatEmpregado(414);
+		novo.setNomeEmpregado("carlossantos");
+		novo.setCargoEmpregado("Analista de Desenvolvimento");
+		novo.setSenhaEmpregado("1414");
+		novo.setDepEmpregado("DEPRH");
+		empregadoDao.inserir(novo);
+		
+		novo.setMatEmpregado(424);
+		novo.setNomeEmpregado("brunosilva");
+		novo.setCargoEmpregado("Gestor");
+		novo.setSenhaEmpregado("2424");
 		novo.setDepEmpregado("DEPRH");
 		empregadoDao.inserir(novo);
 		

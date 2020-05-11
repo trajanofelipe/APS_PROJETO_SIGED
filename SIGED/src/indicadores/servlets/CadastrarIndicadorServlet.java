@@ -24,7 +24,8 @@ public class CadastrarIndicadorServlet extends HttpServlet {
 		double metaIndicador = Integer.parseInt(request.getParameter("metaIndicador").trim()); // campo obrigatório
 //				Double.parseDouble(request.getParameter("valorIndicador").trim()); 
 //				Integer.parseInt(request.getParameter("metaIndicador").trim()); // campo obrigatório
-		double valorIndicador = Integer.parseInt(request.getParameter("valorIndicador").trim()); // campo obrigatório
+		double valorIndicador = 0;
+//				Integer.parseInt(request.getParameter("valorIndicador").trim()); // campo obrigatório
 //				Double.parseDouble(request.getParameter("metaIndicador").trim()); 
 //				Integer.parseInt(request.getParameter("valorIndicador").trim()); // campo obrigatório		
 				

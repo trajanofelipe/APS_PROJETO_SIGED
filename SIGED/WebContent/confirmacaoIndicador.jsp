@@ -6,8 +6,10 @@
 </head>
 <body>
 	<%@include file="_cabecalho.jsp"%>	
-	
+	<%@include file="_import.jsp"%>	
 	<!--  CONTAINER PRINCIPAL -->
+	
+	
 	<div class="container">	 
 		<div class="alert alert-warning">		
 			<% 
@@ -29,7 +31,7 @@
 					<a href="gerenciarIndicadores.jsp" class="btn btn-primary">Não</a>			
 					
 			<%	} else if( operacao.equals("verpainel")) { %>
-					<strong>Deseja proseguir para visualizar os indicadores da data-base e departamento selecionados?</strong>			
+					<strong>Deseja proseguir para visualizar os indicadores de <%=request.getParameter("dataIndicador")%> - departamento <%=request.getParameter("depIndicador")%> ?</strong>			
 					<br></br>
 					<a href="PainelIndicador.do?depIndicador=<%=request.getParameter("depIndicador")%>
 					&dataIndicador=<%=request.getParameter("dataIndicador")%>" class="btn btn-primary">Sim</a>

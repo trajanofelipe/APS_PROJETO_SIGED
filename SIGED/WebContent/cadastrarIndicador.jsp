@@ -84,10 +84,10 @@
 					</div>	
 					
 					
-					<div class="form-group">
-						<label for="valorIndicador">Valor</label>		
-						<input type="text" class="form-control" id="valorIndicador" min="0" name="valorIndicador" value="<%=valorIndicador%>"  />
-					</div>	
+<!-- 					<div class="form-group"> -->
+<!-- 						<label for="valorIndicador">Valor</label>		 -->
+<%-- 						<input type="text" class="form-control" id="valorIndicador" min="0" name="valorIndicador" value="<%=valorIndicador%>"  /> --%>
+<!-- 					</div>	 -->
 				
 							
 			</fieldset>

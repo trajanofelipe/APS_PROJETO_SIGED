@@ -196,36 +196,15 @@ public class IndicadorManager {
 	
 
 		
-//		try {
-//			dao.atualizar(existente);
-//			String mensagem = "Indicador " + existente.getNomeIndicador() + " lançado com sucesso.";
-//			return mensagem;
-//		} catch( Exception e ) {
-//			e.printStackTrace();
-//			String mensagem = "Não foi possível ver o Indicador";
-//			System.out.println(existente.getNomeIndicador());
-//			return mensagem;
-//		}
-	
-	
 	
 	
 	public static String lancarIndicador(int idIndicador, String dataIndicador, String nomeIndicador, String depIndicador, double metaIndicador, double valorIndicador) {
 		
 		IndicadorDAO dao = new IndicadorDAO();
 
-				// Verifica se todos os campos estão preenchidos
-//				if( nomeIndicador == null || depIndicador == null || metaIndicador ==0 || dataIndicador == null) { 
-//					String mensagem = "Não foi possível editar o indicador: Preencha todos os campos obrigatórios.";
-//					return mensagem;
-//				}
-
-				// Verifica se Já existe indicador com este nome
+			// Verifica se Já existe indicador com este nome
 				Indicador existente = dao.selecionarPorNome(nomeIndicador);
-//				if( existente != null && existente.getIdIndicador() != idIndicador ) {
-//					Str3ing mensagem = "Não foi possível editar o indicaor: Já existe outro indicador com este nome.";
-//					return mensagem;
-//				}
+			
 
 		// Recupera o Indicador a editar
 		existente = (Indicador)dao.selecionarPorId(idIndicador);
